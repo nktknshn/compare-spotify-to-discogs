@@ -1,0 +1,21 @@
+{
+// Документацию по формату tasks.json см.
+    // по адресу https://go.microsoft.com/fwlink/?LinkId=733558
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-react",
+            "type": "npm",
+            "script": "build-react",
+            "path": "html/",
+            "problemMatcher": []
+        },
+        {
+            "label": "build",
+            "type": "npm",
+            "script": "build",
+            "path": "html/",
+            "problemMatcher": []
+        },
+    ]
+}

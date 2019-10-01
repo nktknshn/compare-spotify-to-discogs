@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://0.0.0.0:8080/result-react.html -->
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Compare Spotify to Discogs</title>
+    <!-- <script src="./dist/spotify-web-api.js"></script> -->
+    <style>
+        body {
+            background-color: #282828
+        }
+
+        input.searchInput {
+            width: 80ch;
+            /* line-height: 24px; */
+            padding-left: 8px;
+            font-size: 22px;
+            background-color: inherit;
+            border-color: transparent;
+            border-radius: 3px;
+        }
+
+        div.container {
+            /* padding: 4px; */
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            height: 50vh;
+            flex-direction: column;
+        }
+
+        #resultsDiv {
+            background-color: hsl(0, 0%, 11%);
+            margin: 0 auto;
+            border-radius: 3px;
+            /* width: 50vw; */
+            /* border-color: hsla(0, 0%, 53.3%, .2) */
+        }
+
+        #resultsTable thead tr th {
+            padding: 4px;
+        }
+
+        #resultsTable thead tr {
+
+            color: hsla(0, 100%, 100%, .66);
+            background-color: hsl(0, 0%, 8%);
+
+        }
+
+        #resultsTable tbody td {
+            padding-left: 4px;
+            padding-bottom: 4px;
+        }
+
+        #resultsTable tbody tr {
+            color: hsla(0, 100%, 100%, .66);
+        }
+
+        #resultsTable {
+            width: 70vw
+        }
+
+        #resultsTitle {
+            margin-left: 3px;
+            color: hsla(0, 100%, 100%, .66);
+            width: 70vw
+        }
+    </style>
+    <style data-styled="" data-styled-version="4.3.2">
+        /* sc-component-id: sc-bdVaJa */
+        .eouaEN {
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            height: 100vh;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        /* sc-component-id: sc-bwzfXH */
+        .hFCera {
+            color: hsla(0, 100%, 100%, .66);
+            background-color: hsl(0, 0%, 8%);
+        }
+
+        /* sc-component-id: sc-htpNat */
+        .fDGAAc {
+            width: 70vw;
+        }
+
+        /* sc-component-id: sc-bxivhb */
+        .eiQcYd {
+            background-color: hsl(0, 0%, 11%);
+            margin: 0 auto;
+            border-radius: 3px;
+        }
+
+        /* sc-component-id: sc-ifAKCX */
+        .hCPUVM {
+            margin-left: 3px;
+            color: hsla(0, 100%, 100%, .66);
+            width: 70vw;
+        }
+
+        /* sc-component-id: sc-EHOje */
+        .jMWuau {
+            color: hsla(0, 100%, 100%, .66);
+            font-size: smaller;
+        }
+
+        /* sc-component-id: sc-bZQynM */
+        .pzGEn {
+            color: hsla(0, 100%, 100%, .66);
+            font-size: x-small;
+        }
+
+        /* sc-component-id: sc-gzVnrw */
+        .cNGPli {
+            color: hsla(0, 100%, 100%, .66);
+            -webkit-text-decoration: none;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="react-container">
+        <div>
+            <div class="sc-bdVaJa eouaEN">
+                <div class="sc-ifAKCX hCPUVM">
+                    <h2>Pram</h2>
+                </div>
+                <div class="sc-bxivhb eiQcYd">
+                    <table class="sc-htpNat fDGAAc">
+                        <thead>
+                            <tr class="sc-bwzfXH hFCera">
+                                <th>Year</th>
+                                <th>Spotify</th>
+                                <th>Discogs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>1989</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td></td>
+                                <td><a href="https://discogs.com/release/9625523" class="sc-gzVnrw cNGPli">1989 - Brum
+                                        Brum - TrackAppearance</a></td>
+                            </tr>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>1992</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td></td>
+                                <td><a href="https://discogs.com/master/81834" class="sc-gzVnrw cNGPli">1992 - Gash -
+                                        Main</a></td>
+                            </tr>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>1993</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td><a href="https://open.spotify.com/album/5BsuFGZ8f5iKxbi6L9Nv5E"
+                                        class="sc-gzVnrw cNGPli">1993 - The Stars Are So Big The Earth Is So Small...
+                                        Stay As You Are - album</a></td>
+                                <td><a href="https://discogs.com/release/2221563" class="sc-gzVnrw cNGPli">1993 - Radio
+                                        Freak In A Storm / K-Funk - Main</a></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td><a href="https://discogs.com/master/21289" class="sc-gzVnrw cNGPli">1993 - Iron Lung
+                                        E.P. - Main</a></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td><a href="https://discogs.com/master/21292" class="sc-gzVnrw cNGPli">1993 - The Stars
+                                        Are So Big, The Earth Is So Small ... Stay As You Are - Main</a></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td><a href="https://discogs.com/release/1938575" class="sc-gzVnrw cNGPli">1993 - The
+                                        Sound Of Mob Culture - TrackAppearance</a></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td><a href="https://discogs.com/release/5708397" class="sc-gzVnrw cNGPli">1993 -
+                                        R.P.C.2 - A Collection Of Current And Forthcoming Releases - TrackAppearance</a>
+                                </td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td><a href="https://discogs.com/release/7174244" class="sc-gzVnrw cNGPli">1993 - Wildly
+                                        Effeminate Juvenile Delinquents - TrackAppearance</a></td>
+                            </tr>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>1994</td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td><a href="https://open.spotify.com/album/5daIDPyUNWCtXE7gVvcX0P"
+                                        class="sc-gzVnrw cNGPli">1994 - Meshes Ep - single</a></td>
+                                <td><a href="https://discogs.com/master/21290" class="sc-gzVnrw cNGPli">1994 - Meshes -
+                                        Main</a></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td><a href="https://discogs.com/master/21300" class="sc-gzVnrw cNGPli">1994 - Helium -
+                                        Main</a></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td><a href="https://discogs.com/release/4430533" class="sc-gzVnrw cNGPli">1994 -
+                                        R.P.C.3 - A Collection Of Current And Forthcoming Releases - TrackAppearance</a>
+                                </td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td><a href="https://discogs.com/master/21260" class="sc-gzVnrw cNGPli">1994 - Pop (Do
+                                        We Not Like That?) - TrackAppearance</a></td>
+                            </tr>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>1995</td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td><a href="https://open.spotify.com/album/1loxnfKZAcX3wsP96p4nsY"
+                                        class="sc-gzVnrw cNGPli">1995 - Sargasso Sea - album</a></td>
+                                <td><a href="https://discogs.com/release/5582431" class="sc-gzVnrw cNGPli">1995 -
+                                        Perambulations - Main</a></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td><a href="https://discogs.com/master/21294" class="sc-gzVnrw cNGPli">1995 - Sargasso
+                                        Sea - Main</a></td>
+                            </tr>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>1996</td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td><a href="https://discogs.com/master/21298" class="sc-gzVnrw cNGPli">1996 - Music For
+                                        Your Movies - Main</a></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td><a href="https://discogs.com/master/721911" class="sc-gzVnrw cNGPli">1996 -
+                                        Omnichord / Sixty Years Of Telephony - Main</a></td>
+                            </tr>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>1997</td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td><a href="https://open.spotify.com/album/3u3DsP4DHP32kmsM6Pswzj"
+                                        class="sc-gzVnrw cNGPli">1997 - North Pole Radio Station - album</a></td>
+                                <td><a href="https://discogs.com/master/1517648" class="sc-gzVnrw cNGPli">1997 - The
+                                        Last Astronaut - Main</a></td>
+                            </tr>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>1998</td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td><a href="https://discogs.com/master/21295" class="sc-gzVnrw cNGPli">1998 - North
+                                        Pole Radio Station - Main</a></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td><a href="https://discogs.com/master/21302" class="sc-gzVnrw cNGPli">1998 - Sleepy
+                                        Sweet - Main</a></td>
+                            </tr>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>1999</td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td><a href="https://open.spotify.com/album/5T4O2UlPUtkOp0x9afTbT7"
+                                        class="sc-gzVnrw cNGPli">1999 - Telemetric Melodies - album</a></td>
+                                <td><a href="https://discogs.com/master/21305" class="sc-gzVnrw cNGPli">1999 - Keep In A
+                                        Dry Place And Away From Children - Main</a></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td><a href="https://discogs.com/master/21303" class="sc-gzVnrw cNGPli">1999 -
+                                        Telemetric Melodies - Main</a></td>
+                            </tr>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>2000</td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td><a href="https://open.spotify.com/album/39KtuXAPlbb1O88ozEyTZS"
+                                        class="sc-gzVnrw cNGPli">2000 - The Museum Of Imaginary Animals - album</a></td>
+                                <td><a href="https://discogs.com/master/21301" class="sc-gzVnrw cNGPli">2000 - The
+                                        Museum Of Imaginary Animals - Main</a></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td><a href="https://discogs.com/master/21306" class="sc-gzVnrw cNGPli">2000 - The Owl
+                                        Service - Main</a></td>
+                            </tr>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>2001</td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td><a href="https://open.spotify.com/album/5sTdTyQqBnMfI48NyZLBfo"
+                                        class="sc-gzVnrw cNGPli">2001 - Somniloquy - album</a></td>
+                                <td><a href="https://discogs.com/master/21307" class="sc-gzVnrw cNGPli">2001 -
+                                        Somniloquy - Main</a></td>
+                            </tr>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>2002</td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td></td>
+                                <td><a href="https://discogs.com/master/21308" class="sc-gzVnrw cNGPli">2002 - Dark
+                                        Island - Main</a></td>
+                            </tr>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>2003</td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td><a href="https://open.spotify.com/album/1GS1QP90A1LjCn8f7VO7nZ"
+                                        class="sc-gzVnrw cNGPli">2003 - Dark Island - album</a></td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td><a href="https://open.spotify.com/album/33toGbR4XKTIVakFfe3B50"
+                                        class="sc-gzVnrw cNGPli">2003 - Survive and Advance Vol. 2: A Merge Records
+                                        Compilation - compilation</a></td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>2004</td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td><a href="https://open.spotify.com/album/0rEg13JDg9mYADlX47Rt05"
+                                        class="sc-gzVnrw cNGPli">2004 - Old Enough to Know Better: 15 Years of Merge
+                                        Records - compilation</a></td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>2007</td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td><a href="https://open.spotify.com/album/56ZARXfhgmSljqbyanUzdC"
+                                        class="sc-gzVnrw cNGPli">2007 - The Moving Frontier - album</a></td>
+                                <td><a href="https://discogs.com/master/21309" class="sc-gzVnrw cNGPli">2007 - The
+                                        Moving Frontier - Main</a></td>
+                            </tr>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>2008</td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td><a href="https://open.spotify.com/album/4jqIQ4srPIBcTcPdGFxdGF"
+                                        class="sc-gzVnrw cNGPli">2008 - All The Rage - compilation</a></td>
+                                <td><a href="https://discogs.com/release/1769078" class="sc-gzVnrw cNGPli">2008 - Shadow
+                                        Shows Of The Phantascope - Main</a></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td><a href="https://open.spotify.com/album/2v4YfD1KhgAN5ORMtsQCoY"
+                                        class="sc-gzVnrw cNGPli">2008 - Prisoner Of The Seven Pines - single</a></td>
+                                <td><a href="https://discogs.com/master/171651" class="sc-gzVnrw cNGPli">2008 - Prisoner
+                                        Of The Seven Pines - Main</a></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td><a href="https://open.spotify.com/album/4pCQWSTr4aDkUpqtADiQNx"
+                                        class="sc-gzVnrw cNGPli">2008 - The Moving Frontier - album</a></td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-bZQynM pzGEn">
+                                <td>2018</td>
+                                <td></td>
+                            </tr>
+                            <tr class="sc-EHOje jMWuau">
+                                <td><a href="https://open.spotify.com/album/1JVx6dlk7PKc5kbplLJdZg"
+                                        class="sc-gzVnrw cNGPli">2018 - Across The Meridian - album</a></td>
+                                <td><a href="https://discogs.com/master/1395025" class="sc-gzVnrw cNGPli">2018 - Across
+                                        The Meridian - Main</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./compare1_files/index.build.js"></script>
+
+</body>
+
+</html>

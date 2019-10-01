@@ -1,0 +1,1088 @@
+{
+    "pagination": {
+        "per_page": 50,
+        "pages": 11,
+        "page": 1,
+        "urls": {
+            "last": "https://api.discogs.com/artists/5593/releases?sort=year&per_page=50&token=IzSqDBseMpKBZIzWcNxKICEcIRfuhMluLedYuCpT&page=11",
+            "next": "https://api.discogs.com/artists/5593/releases?sort=year&per_page=50&token=IzSqDBseMpKBZIzWcNxKICEcIRfuhMluLedYuCpT&page=2"
+        },
+        "items": 507
+    },
+    "releases": [
+        {
+            "status": "Accepted",
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 13,
+                    "in_wantlist": 37
+                }
+            },
+            "thumb": "https://img.discogs.com/OYKYM4m7gzoLIhO5chWuxa6dPs0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1414360-1217694228.jpeg.jpg",
+            "format": "Cass, Mixed",
+            "title": "Geneva'98",
+            "label": "Gigolo Tapes",
+            "role": "Main",
+            "year": 1998,
+            "resource_url": "https://api.discogs.com/releases/1414360",
+            "artist": "Miss Kittin",
+            "type": "release",
+            "id": 1414360
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 250,
+                    "in_wantlist": 101
+                }
+            },
+            "thumb": "https://img.discogs.com/AY9R0De0o4FUTrJ74hKxZEM7I44=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-24580-1162329157.jpeg.jpg",
+            "title": "The Vogue",
+            "main_release": 24580,
+            "artist": "Antonelli Electr. Featuring Miss Kittin",
+            "role": "Main",
+            "year": 2000,
+            "resource_url": "https://api.discogs.com/masters/356088",
+            "type": "master",
+            "id": 356088
+        },
+        {
+            "status": "Accepted",
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 270,
+                    "in_wantlist": 47
+                }
+            },
+            "thumb": "https://img.discogs.com/5JcYxYFD4PVSYBAMZGxJPAdukII=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-28095-1196952018.jpeg.jpg",
+            "format": "CD, Comp, Mixed",
+            "title": "On The Road",
+            "label": "Terminal M",
+            "role": "Main",
+            "year": 2001,
+            "resource_url": "https://api.discogs.com/releases/28095",
+            "artist": "Miss Kittin",
+            "type": "release",
+            "id": 28095
+        },
+        {
+            "status": "Accepted",
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 1,
+                    "in_wantlist": 17
+                }
+            },
+            "thumb": "https://img.discogs.com/4inx3og2743Wtk3bStSkszqk6ew=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3874229-1347685618-9834.jpeg.jpg",
+            "format": "CDr, Mixed",
+            "title": "Vodkatronic",
+            "label": "Genius Insanity",
+            "role": "Main",
+            "year": 2001,
+            "resource_url": "https://api.discogs.com/releases/3874229",
+            "artist": "Electric Indigo & Ms. Kitten*",
+            "type": "release",
+            "id": 3874229
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 367,
+                    "in_wantlist": 74
+                }
+            },
+            "thumb": "https://img.discogs.com/kKVuipUpSKu9DTVyh4CK9oepGuU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-64983-1141142452.jpeg.jpg",
+            "title": "Je T'Aime... Moi Non Plus",
+            "main_release": 64983,
+            "artist": "Sven V\u00e4th Feat. Miss Kittin",
+            "role": "Main",
+            "year": 2001,
+            "resource_url": "https://api.discogs.com/masters/3767",
+            "type": "master",
+            "id": 3767
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 329,
+                    "in_wantlist": 130
+                }
+            },
+            "thumb": "https://img.discogs.com/1TZoHI6jINIQJsLg_UA05TAcU2Y=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-76768-1192017990.jpeg.jpg",
+            "title": "Or",
+            "main_release": 76768,
+            "artist": "Golden Boy With Miss Kittin",
+            "role": "Main",
+            "year": 2001,
+            "resource_url": "https://api.discogs.com/masters/38781",
+            "type": "master",
+            "id": 38781
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 722,
+                    "in_wantlist": 288
+                }
+            },
+            "thumb": "https://img.discogs.com/iPgc-H1ff2-3EElxXtgUzUypdN0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-31136-1306187327.jpeg.jpg",
+            "title": "Rippin Kittin",
+            "main_release": 31136,
+            "artist": "Golden Boy With Miss Kittin",
+            "role": "Main",
+            "year": 2001,
+            "resource_url": "https://api.discogs.com/masters/38797",
+            "type": "master",
+            "id": 38797
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 637,
+                    "in_wantlist": 87
+                }
+            },
+            "thumb": "https://img.discogs.com/J5sZAycqB0PYgFqyh2gdiwmbhEs=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-43711-1159548346.jpeg.jpg",
+            "title": "Electroclash : Massive 19 Track Mix From Miss Kittin",
+            "main_release": 43711,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2002,
+            "resource_url": "https://api.discogs.com/masters/1108511",
+            "type": "master",
+            "id": 1108511
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 250,
+                    "in_wantlist": 114
+                }
+            },
+            "thumb": "https://img.discogs.com/OvlIgZoMtus3EALzkEpi8Olir_8=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-41672-1348938894-6421.jpeg.jpg",
+            "title": "My Voice...",
+            "main_release": 41672,
+            "artist": "Berkovi* Vs. Kittin*",
+            "role": "Main",
+            "year": 2002,
+            "resource_url": "https://api.discogs.com/masters/451683",
+            "type": "master",
+            "id": 451683
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 365,
+                    "in_wantlist": 51
+                }
+            },
+            "thumb": "https://img.discogs.com/zWooQBCAfmQokGLh2u8Avjd2i4w=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-135858-1200001056.jpeg.jpg",
+            "title": "Radio Caroline Volume 1",
+            "main_release": 135858,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2002,
+            "resource_url": "https://api.discogs.com/masters/38803",
+            "type": "master",
+            "id": 38803
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 147,
+                    "in_wantlist": 53
+                }
+            },
+            "thumb": "https://img.discogs.com/0xHduGy2dP8WLWtPP6tjVNbzq4U=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-192067-001.gif.jpg",
+            "title": "Autopilot",
+            "main_release": 192067,
+            "artist": "Golden Boy With Miss Kittin",
+            "role": "Main",
+            "year": 2003,
+            "resource_url": "https://api.discogs.com/masters/38814",
+            "type": "master",
+            "id": 38814
+        },
+        {
+            "status": "Accepted",
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 58,
+                    "in_wantlist": 40
+                }
+            },
+            "thumb": "https://img.discogs.com/D6qoKwqMz1xXYW5XSNHVEGN614U=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-291171-1094595636.jpg.jpg",
+            "format": "12\", Promo",
+            "title": "Klub Kit Deluxe",
+            "label": "Nobody's Bizzness, Nobody's Bizzness, Nobody's Bizzness",
+            "role": "Main",
+            "year": 2004,
+            "resource_url": "https://api.discogs.com/releases/291171",
+            "artist": "Miss Kittin",
+            "type": "release",
+            "id": 291171
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 846,
+                    "in_wantlist": 156
+                }
+            },
+            "thumb": "https://img.discogs.com/w5dNXcZWrYj_bNJjp16WkWMoqMY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-328344-1106297718.jpg.jpg",
+            "title": "Requiem For A Hit",
+            "main_release": 328344,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2004,
+            "resource_url": "https://api.discogs.com/masters/38945",
+            "type": "master",
+            "id": 38945
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 417,
+                    "in_wantlist": 56
+                }
+            },
+            "thumb": "https://img.discogs.com/i_Aqv8fqWR1YqDgrXGOR78ZzdLI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-410642-1173231175.jpeg.jpg",
+            "title": "Happy Violentine",
+            "main_release": 410642,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2004,
+            "resource_url": "https://api.discogs.com/masters/38967",
+            "type": "master",
+            "id": 38967
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 7,
+                    "in_wantlist": 12
+                }
+            },
+            "thumb": "https://img.discogs.com/u6s5Fp-fzJETSW6KsARr9wdH0qs=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1401743-1217746491.jpeg.jpg",
+            "title": "I Com",
+            "main_release": 1401743,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2004,
+            "resource_url": "https://api.discogs.com/masters/1334675",
+            "type": "master",
+            "id": 1334675
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 650,
+                    "in_wantlist": 73
+                }
+            },
+            "thumb": "https://img.discogs.com/2DnsfMK8DpDSR9GF0GAVHL1bGuo=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-256746-1220824011.jpeg.jpg",
+            "title": "Professional Distortion",
+            "main_release": 256746,
+            "artist": "Miss Kittin's*",
+            "role": "Main",
+            "year": 2004,
+            "resource_url": "https://api.discogs.com/masters/38905",
+            "type": "master",
+            "id": 38905
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 435,
+                    "in_wantlist": 122
+                }
+            },
+            "thumb": "https://img.discogs.com/wcFxUIe1Xj79GYFNa7VFwyfISQo=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-262504-1098175224.jpg.jpg",
+            "title": "I Com",
+            "main_release": 262504,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2004,
+            "resource_url": "https://api.discogs.com/masters/38886",
+            "type": "master",
+            "id": 38886
+        },
+        {
+            "status": "Accepted",
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 436,
+                    "in_wantlist": 82
+                }
+            },
+            "thumb": "https://img.discogs.com/Wfm7oVz4Ff4OR80ec3-1hMG1JtA=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-409812-1405622768-1893.jpeg.jpg",
+            "format": "12\"",
+            "title": "LFO Remixes Miss Kittin",
+            "label": "NovaMute",
+            "role": "Main",
+            "year": 2005,
+            "resource_url": "https://api.discogs.com/releases/409812",
+            "artist": "Miss Kittin",
+            "type": "release",
+            "id": 409812
+        },
+        {
+            "status": "Accepted",
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 1,
+                    "in_wantlist": 30
+                }
+            },
+            "thumb": "https://img.discogs.com/zt3TRd0yY9oUKD7QAu4MRkj4d_o=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1403108-1216680479.jpeg.jpg",
+            "format": "CDr, Comp, Mixed, Promo",
+            "title": "DJ Mix - 2005",
+            "label": "NovaMute",
+            "role": "Main",
+            "year": 2005,
+            "resource_url": "https://api.discogs.com/releases/1403108",
+            "artist": "Miss Kittin",
+            "type": "release",
+            "id": 1403108
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 80,
+                    "in_wantlist": 18
+                }
+            },
+            "thumb": "https://img.discogs.com/jEFEXGabb_tpNAkCmjyY1afjwOA=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-459828-1116589027.jpg.jpg",
+            "title": "Mixing Me",
+            "main_release": 459828,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2005,
+            "resource_url": "https://api.discogs.com/masters/38987",
+            "type": "master",
+            "id": 38987
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 240,
+                    "in_wantlist": 41
+                }
+            },
+            "thumb": "https://img.discogs.com/tkVxMgOCJQWduP1obdjxQCKLSEs=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-606875-1236797164.jpeg.jpg",
+            "title": "Live At S\u00f3nar",
+            "main_release": 606875,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2006,
+            "resource_url": "https://api.discogs.com/masters/5322",
+            "type": "master",
+            "id": 5322
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 306,
+                    "in_wantlist": 81
+                }
+            },
+            "thumb": "https://img.discogs.com/jct5Ix0iGO9dxtmQQ2H8DUJTG_U=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-674304-1146266709.jpeg.jpg",
+            "title": "A Bugged Out Mix",
+            "main_release": 674304,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2006,
+            "resource_url": "https://api.discogs.com/masters/896",
+            "type": "master",
+            "id": 896
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 214,
+                    "in_wantlist": 76
+                }
+            },
+            "thumb": "https://img.discogs.com/4yInGcWiJmK9J6kIjAjrRPO72Nc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1156839-1199506862.jpeg.jpg",
+            "title": "Kittin Is High",
+            "main_release": 1156839,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2007,
+            "resource_url": "https://api.discogs.com/masters/38980",
+            "type": "master",
+            "id": 38980
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 240,
+                    "in_wantlist": 163
+                }
+            },
+            "thumb": "https://img.discogs.com/q-mQRw3Jxj3fkYtLT7D_rYYmH0k=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1214922-1519674541-1664.jpeg.jpg",
+            "title": "Batbox",
+            "main_release": 1214922,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2007,
+            "resource_url": "https://api.discogs.com/masters/38993",
+            "type": "master",
+            "id": 38993
+        },
+        {
+            "status": "Accepted",
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 2,
+                    "in_wantlist": 20
+                }
+            },
+            "thumb": "https://img.discogs.com/35UY2loGrbREILyWWdGoqDjaO5Y=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6141465-1540377721-8069.jpeg.jpg",
+            "format": "12\", S/Sided, Promo + CDr, CD-ROM",
+            "title": "3 \u00e8me Sexe",
+            "label": "EMI",
+            "role": "Main",
+            "year": 2008,
+            "resource_url": "https://api.discogs.com/releases/6141465",
+            "artist": "Miss Kittin",
+            "type": "release",
+            "id": 6141465
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 219,
+                    "in_wantlist": 101
+                }
+            },
+            "thumb": "https://img.discogs.com/ECNnfCtXyRGrh_q29jkptb8z6x4=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1371654-1215499141.jpeg.jpg",
+            "title": "Grace",
+            "main_release": 1371654,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2008,
+            "resource_url": "https://api.discogs.com/masters/209704",
+            "type": "master",
+            "id": 209704
+        },
+        {
+            "status": "Accepted",
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 4,
+                    "in_wantlist": 7
+                }
+            },
+            "thumb": "https://img.discogs.com/qDCQLAUOrOj0xHB8F49k4UZhNAs=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3720137-1341672533-6485.jpeg.jpg",
+            "format": "File, WAV",
+            "title": "Untitled (BatBox Bootleg)",
+            "label": "Nobody's Bizzness",
+            "role": "Main",
+            "year": 2009,
+            "resource_url": "https://api.discogs.com/releases/3720137",
+            "artist": "Miss Kittin",
+            "type": "release",
+            "id": 3720137
+        },
+        {
+            "status": "Accepted",
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 234,
+                    "in_wantlist": 51
+                }
+            },
+            "thumb": "https://img.discogs.com/1gk4iVM3dFPj3NMFi6hYrp99xHc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2554604-1425594245-3097.jpeg.jpg",
+            "format": "CD, Mixed",
+            "title": "20 Years Of Groove - Miss Kittin Mix",
+            "label": "Groove",
+            "role": "Main",
+            "year": 2010,
+            "resource_url": "https://api.discogs.com/releases/2554604",
+            "artist": "Miss Kittin",
+            "type": "release",
+            "id": 2554604
+        },
+        {
+            "status": "Accepted",
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 4,
+                    "in_wantlist": 2
+                }
+            },
+            "thumb": "https://img.discogs.com/13i8uoehNtz9tOJg2sKLq1z13PA=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3222197-1321120533.jpeg.jpg",
+            "format": "File, MP3, 320",
+            "title": "Silver Lake",
+            "label": "Soul Aid",
+            "role": "Main",
+            "year": 2011,
+            "resource_url": "https://api.discogs.com/releases/3222197",
+            "artist": "Miss Kittin",
+            "type": "release",
+            "id": 3222197
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 92,
+                    "in_wantlist": 42
+                }
+            },
+            "thumb": "https://img.discogs.com/-7gSVre5y4UevlpBAwYRuGNZH8M=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2652108-1296843023.jpeg.jpg",
+            "title": "All You Need",
+            "main_release": 2652108,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2011,
+            "resource_url": "https://api.discogs.com/masters/307727",
+            "type": "master",
+            "id": 307727
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 3,
+                    "in_wantlist": 4
+                }
+            },
+            "thumb": "https://img.discogs.com/GQ2DV5RVvavfUq7fP2PVweTvU1g=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4022345-1352651615-4771.jpeg.jpg",
+            "title": "Hide",
+            "main_release": 4022345,
+            "artist": "Kris Menace Featuring Miss Kittin",
+            "role": "Main",
+            "year": 2012,
+            "resource_url": "https://api.discogs.com/masters/490568",
+            "type": "master",
+            "id": 490568
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 66,
+                    "in_wantlist": 70
+                }
+            },
+            "thumb": "https://img.discogs.com/ckNkEvsRZF2nexvaNFFSaWKvISE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3789163-1406187507-4670.jpeg.jpg",
+            "title": "Heidi Presents Jackathon Jams",
+            "main_release": 3789163,
+            "artist": "Maya Jane Coles, Miss Kittin And tINI (2)",
+            "role": "Main",
+            "year": 2012,
+            "resource_url": "https://api.discogs.com/masters/504512",
+            "type": "master",
+            "id": 504512
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 5,
+                    "in_wantlist": 1
+                }
+            },
+            "thumb": "https://img.discogs.com/7BJEnlp69pBaLf55PmElKPH82hM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-9354838-1479141592-7447.jpeg.jpg",
+            "title": "Life Is My Teacher",
+            "main_release": 9354838,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2012,
+            "resource_url": "https://api.discogs.com/masters/1090259",
+            "type": "master",
+            "id": 1090259
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 50,
+                    "in_wantlist": 48
+                }
+            },
+            "thumb": "https://img.discogs.com/_N7LQwewwq2gnGk9AIINiRrdino=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3862558-1561426782-1320.jpeg.jpg",
+            "title": "Housewife (Remixes)",
+            "main_release": 3862558,
+            "artist": "Oxia Feat. Miss Kittin",
+            "role": "Main",
+            "year": 2012,
+            "resource_url": "https://api.discogs.com/masters/469859",
+            "type": "master",
+            "id": 469859
+        },
+        {
+            "status": "Accepted",
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 80,
+                    "in_wantlist": 35
+                }
+            },
+            "thumb": "https://img.discogs.com/ol8J0xguhjl1nrIrXuTiLh3FOoo=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4495549-1379151294-4707.png.jpg",
+            "format": "12\", Ltd, Mixed",
+            "title": "Kittin Callin 30' Mix",
+            "label": "wSphere",
+            "role": "Main",
+            "year": 2013,
+            "resource_url": "https://api.discogs.com/releases/4495549",
+            "artist": "Miss Kittin",
+            "type": "release",
+            "id": 4495549
+        },
+        {
+            "status": "Accepted",
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 45,
+                    "in_wantlist": 32
+                }
+            },
+            "thumb": "https://img.discogs.com/IL-6_Go0gm-i2_CYDc328YjWfNc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4721968-1373394229-2816.jpeg.jpg",
+            "format": "12\", W/Lbl, Sta",
+            "title": "What To Wear (SPNRMXS)",
+            "label": "Not On Label",
+            "role": "Main",
+            "year": 2013,
+            "resource_url": "https://api.discogs.com/releases/4721968",
+            "artist": "Miss Kittin",
+            "type": "release",
+            "id": 4721968
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 12,
+                    "in_wantlist": 2
+                }
+            },
+            "thumb": "https://img.discogs.com/Z0xpRc0qh4tX38D7NVNrEKME5Jc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4686980-1372280105-4267.jpeg.jpg",
+            "title": "What To Wear",
+            "main_release": 4686980,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2013,
+            "resource_url": "https://api.discogs.com/masters/618013",
+            "type": "master",
+            "id": 618013
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 228,
+                    "in_wantlist": 48
+                }
+            },
+            "thumb": "https://img.discogs.com/dEsxW7nna8kVyJXiAOV3ziez0lc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4492298-1366451024-2532.jpeg.jpg",
+            "title": "Calling From The Stars",
+            "main_release": 4492298,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2013,
+            "resource_url": "https://api.discogs.com/masters/546882",
+            "type": "master",
+            "id": 546882
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 15,
+                    "in_wantlist": 8
+                }
+            },
+            "thumb": "https://img.discogs.com/JnhXHCaiunhpoU6_XPIbP_Vn0xk=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4413347-1364224729-7415.jpeg.jpg",
+            "title": "Bassline",
+            "main_release": 4413347,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2013,
+            "resource_url": "https://api.discogs.com/masters/537206",
+            "type": "master",
+            "id": 537206
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 13,
+                    "in_wantlist": 6
+                }
+            },
+            "thumb": "https://img.discogs.com/mRcb8vrOiMOF1kmgNJnn5W0HKn4=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-5110475-1384778278-9919.jpeg.jpg",
+            "title": "Where Is Kittin?",
+            "main_release": 5110475,
+            "artist": "Marc Houle & Miss Kittin",
+            "role": "Main",
+            "year": 2013,
+            "resource_url": "https://api.discogs.com/masters/620840",
+            "type": "master",
+            "id": 620840
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 8,
+                    "in_wantlist": 1
+                }
+            },
+            "thumb": "https://img.discogs.com/4bKZ9YBW3Ch-rmBY3fDV0aocpHc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-5154232-1385968899-2707.jpeg.jpg",
+            "title": "Maneki Neko ",
+            "main_release": 5154232,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2013,
+            "resource_url": "https://api.discogs.com/masters/620850",
+            "type": "master",
+            "id": 620850
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 143,
+                    "in_wantlist": 168
+                }
+            },
+            "thumb": "https://img.discogs.com/TkfL4ZvBAV8O6r93osS_JUnqZYY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-5941129-1410041607-5608.jpeg.jpg",
+            "title": "Exit",
+            "main_release": 5941129,
+            "artist": "Dubfire Feat. Miss Kittin",
+            "role": "Main",
+            "year": 2014,
+            "resource_url": "https://api.discogs.com/masters/739669",
+            "type": "master",
+            "id": 739669
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 9,
+                    "in_wantlist": 17
+                }
+            },
+            "thumb": "https://img.discogs.com/KP9ElEW6YBrC_iN3QGzVd6R9zII=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-7615584-1445196576-8924.jpeg.jpg",
+            "title": "Pleasure And Pain",
+            "main_release": 7615584,
+            "artist": "Djedjotronic Feat. Miss Kittin",
+            "role": "Main",
+            "year": 2015,
+            "resource_url": "https://api.discogs.com/masters/1524985",
+            "type": "master",
+            "id": 1524985
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 8,
+                    "in_wantlist": 5
+                }
+            },
+            "thumb": "https://img.discogs.com/8cG8uQ2CEAeCw_uXtugbQLaWFLM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-7156653-1434991339-3149.jpeg.jpg",
+            "title": "June",
+            "main_release": 7156653,
+            "artist": "Miss Kittin & Nicolas Masseyeff",
+            "role": "Main",
+            "year": 2015,
+            "resource_url": "https://api.discogs.com/masters/1079105",
+            "type": "master",
+            "id": 1079105
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 13,
+                    "in_wantlist": 7
+                }
+            },
+            "thumb": "https://img.discogs.com/ft5MAAGEcClfYXmGBp8IVKa7qiM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-7303276-1438420515-9013.jpeg.jpg",
+            "title": "Rumors On The Dancefloor",
+            "main_release": 7303276,
+            "artist": "Guy Gerber, Miss Kittin",
+            "role": "Main",
+            "year": 2015,
+            "resource_url": "https://api.discogs.com/masters/869190",
+            "type": "master",
+            "id": 869190
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 7,
+                    "in_wantlist": 3
+                }
+            },
+            "thumb": "https://img.discogs.com/VwgFSI8huGxr1H5ekx7kCGNjAKM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8514028-1463150922-6242.jpeg.jpg",
+            "title": "Stuff In The Trunk",
+            "main_release": 8514028,
+            "artist": "The Martinez Brothers Feat. Miss Kittin",
+            "role": "Main",
+            "year": 2016,
+            "resource_url": "https://api.discogs.com/masters/1015853",
+            "type": "master",
+            "id": 1015853
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 56,
+                    "in_wantlist": 41
+                }
+            },
+            "thumb": "https://img.discogs.com/ujnsnkxEk9zcuyPFzMoxDLOdNXE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-9386872-1479661298-1959.jpeg.jpg",
+            "title": "Ride",
+            "main_release": 9386872,
+            "artist": "Dubfire + Kittin*",
+            "role": "Main",
+            "year": 2016,
+            "resource_url": "https://api.discogs.com/masters/1189237",
+            "type": "master",
+            "id": 1189237
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 30,
+                    "in_wantlist": 16
+                }
+            },
+            "thumb": "https://img.discogs.com/akP5VHnGJQ0-z9bdH3CYSPni6r0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8818905-1470687225-1537.jpeg.jpg",
+            "title": "Kittin Collection",
+            "main_release": 8818905,
+            "artist": "Miss Kittin",
+            "role": "Main",
+            "year": 2016,
+            "resource_url": "https://api.discogs.com/masters/1062393",
+            "type": "master",
+            "id": 1062393
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 76,
+                    "in_wantlist": 49
+                }
+            },
+            "thumb": "https://img.discogs.com/qWdlY0WsII5hExH74Z-CztkbMVU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-12760717-1559170457-3245.jpeg.jpg",
+            "title": "Cosmos",
+            "main_release": 12760717,
+            "artist": "Kittin*",
+            "role": "Main",
+            "year": 2018,
+            "resource_url": "https://api.discogs.com/masters/1459015",
+            "type": "master",
+            "id": 1459015
+        },
+        {
+            "stats": {
+                "user": {
+                    "in_collection": 0,
+                    "in_wantlist": 0
+                },
+                "community": {
+                    "in_collection": 10,
+                    "in_wantlist": 6
+                }
+            },
+            "thumb": "https://img.discogs.com/6WQ8s6WHeMu3nK3RNPsr0Z2gzoY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-11749686-1521734275-7572.jpeg.jpg",
+            "title": "1993 Eacid",
+            "main_release": 11749686,
+            "artist": "Kittin*",
+            "role": "Main",
+            "year": 2018,
+            "resource_url": "https://api.discogs.com/masters/1385928",
+            "type": "master",
+            "id": 1385928
+        }
+    ]
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Compare Spotify to Discogs</title>
+    <!-- <script src="./dist/spotify-web-api.js"></script> -->
+    <script src="../dist/index.build.js"></script>
+    <style>
+        body {
+            background-color: #282828
+        }
+
+        input.searchInput {
+            width: 80ch;
+            /* line-height: 24px; */
+            padding-left: 8px;
+            font-size: 22px;
+            background-color: inherit;
+            border-color: transparent;
+            border-radius: 3px;
+        }
+
+        div.container {
+            /* padding: 4px; */
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            height: 50vh;
+            flex-direction: column;
+        }
+
+        #resultsDiv {
+            background-color: hsl(0, 0%, 11%);
+            margin: 0 auto;
+            border-radius: 3px;
+            /* width: 50vw; */
+            /* border-color: hsla(0, 0%, 53.3%, .2) */
+        }
+
+        #resultsTable thead tr th {
+            padding: 4px;
+        }
+
+        #resultsTable thead tr {
+            
+            color: hsla(0, 100%, 100%, .66);
+            background-color: hsl(0, 0%, 8%);
+            
+        }
+
+        #resultsTable tbody td {
+            padding-left: 4px;
+            padding-bottom: 4px;
+        }
+        
+        #resultsTable tbody tr {
+            color: hsla(0, 100%, 100%, .66);
+        }
+
+        #resultsTable {
+            width: 70vw
+        }
+
+        #resultsTitle {
+            margin-left: 3px;
+            color: hsla(0, 100%, 100%, .66);
+            width: 70vw
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="resultsTitle">
+            <h2>Artificial Brain</h2>
+        </div>
+        <div id="resultsDiv">
+            <table id="resultsTable">
+                <thead>
+                    <tr class="tableHeader"> 
+                        <th>Spotify</th>
+                        <th>Discogs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tableRow">
+                        <td>aaa</td>
+                        <td>bbb</td>
+                    </tr>
+                    <tr class="tableRow">
+                        <td>aaa</td>
+                        <td>bbb</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
