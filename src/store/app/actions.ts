@@ -31,9 +31,6 @@ export const setDiscogsSearchResults = createActionCreator('SET_DISCOGS_SEARCH_R
 export const setSelectedDiscogsIdx = createActionCreator('SET_SELECTED_DISCOGS_IDX',
   resolve => (res: AppState['selectedDiscogsIdx']) => resolve(res))
 
-// export const setDiscogsArtist = createActionCreator('SET_DISCOGS_ARTIST',
-//   resolve => (res: AppState['discogsArtist']) => resolve(res))
-
 export const toggleShowSingles = createAction('TOGGLE_SINGLES')
 export const toggleShowCompilations = createAction('TOGGLE_COMPILATIONS')
 export const toggleShowTrackAppearances = createAction('TOGGLE_TRACK_APPEARANCES')

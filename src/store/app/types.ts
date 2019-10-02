@@ -32,6 +32,7 @@ export interface AppState {
   showCompilations: boolean;
   
   showOtherResults: boolean;
+  showSearchInput: boolean;
 
   spotifyTracks: string[];
   discogsTracks: DiscogsTracks;

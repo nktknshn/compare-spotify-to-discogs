@@ -11,38 +11,34 @@ import { toggleDiscogsReleaseTracks, toggleSpotifyReleaseTracks } from 'Store/ap
 import * as DiscogsApi from 'discogs/types'
 import styled from 'app/styled'
 
-export const Row = styled.tr`
-color: hsla(0, 100%, 100%, .66);
-border-bottom:1pt solid black;
+export const Row = styled.tr<{year?: boolean}>`
+
 `
 
-export const CellYear = styled.td`
+const Cell = styled.td`
+border-bottom: 1px solid ${props => props.theme.tableBorderColor};
+padding-top: 2px 
+padding-bottom: 2px
+` 
+
+export const CellYear = styled(Cell)`
 padding-left: 4px
 padding-right: 8px
 width: ${YearWidth}
-font-size: smaller
+font-size: small
 `
 
-export const CellPlaying = styled.td`
-text-align: left
-padding-right: 8px
-font-size: smaller
-`
-
-export const SpotifyCell = styled.td`
+export const SpotifyCell = styled(Cell)`
 min-width: 40vw
 text-align: right
 `
 
-export const DiscogsCell = styled.td`
+export const DiscogsCell = styled(Cell)`
 min-width: 40vw
 `
 
-export const RowYear = styled.tr`
-color: hsla(0, 100%, 100%, .66);
-font-size: smaller
-text-align: right
-border-bottom:1pt solid black;
+
+export const EmptyCell = styled(Cell)`
 `
 
 export const TableRow: React.FunctionComponent<{
@@ -87,8 +83,8 @@ export const TableRow: React.FunctionComponent<{
         />
       }
 
-      {isSome(middle) && <CellYear>{middle.value}</CellYear>}
-      {isNone(middle) && <td></td>}
+      {isSome(middle) && <CellYear><TextMain>{middle.value}</TextMain></CellYear>}
+      {isNone(middle) && <EmptyCell/>}
 
       {isNone(right) && <DiscogsCell />}
       {isSome(right) && isDiscogsRelease(right.value) &&

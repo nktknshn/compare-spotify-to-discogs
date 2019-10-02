@@ -47,3 +47,7 @@ max-width: 80%;
 max-height: 80%;
 `
 
+export const Centered = styled(DirectionRow)`
+margin: 0 auto;
+width: 200px; 
+`

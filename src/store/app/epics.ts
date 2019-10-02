@@ -8,7 +8,7 @@ import { pipe } from "fp-ts/lib/pipeable";
 import * as TE from "fp-ts/lib/TaskEither";
 import { tryCatch } from "fp-ts/lib/TaskEither";
 import { spotify } from "spotify";
-import { ThunkAC } from "Store";
+import { ThunkAC, AppState, AllActions } from "Store";
 import {
   addDiscogsReleaseTracks, addSpotifyAlbumTracks, removeDiscogsReleaseTracks, removeSpotifyAlbumTracks, resetDiscogsReleaseTracks, resetSpotifyAlbumTracks, setAccessToken, setCurrentTrack,
   // setDiscogsArtist,
@@ -16,14 +16,17 @@ import {
 } from "./actions";
 import { isDiscogsSearchEmpty } from "Store/selectors";
 import { DISCOGS_RELEASES_TO_LOAD } from "app/modules/config";
+import { ThunkDispatch } from "redux-thunk";
 
 type SpotifyError = { statusCode: number };
 
-const toError = (reason: any) => reason as SpotifyError;
+const toSpotifyError = (error: any) => error as SpotifyError;
 
+const asyncError =
+  <T extends ThunkDispatch<AppState, undefined, AllActions>>(d: T) =>
+    (err: any) => async () => { d(getErrorAction(err)) }
 
-
-export const loadCurrentSpotifyArtistFull = (): ThunkAC<Promise<void>> => async (dispatch, getState) => {
+export const loadCurrentSpotifyArtistFullObject = (): ThunkAC<Promise<void>> => async (dispatch, getState) => {
 
   const { app: { selectedSpotifyIdx, spotifyArtists } } = getState()
 
@@ -33,30 +36,32 @@ export const loadCurrentSpotifyArtistFull = (): ThunkAC<Promise<void>> => async 
   dispatch(setLoadingSpotify(true));
 
   await pipe(
-    tryCatch(() => spotify.getArtist(spotifyArtists[selectedSpotifyIdx.value].id), toError),
+    tryCatch(() =>
+      spotify.getArtist(spotifyArtists[selectedSpotifyIdx.value].id), toSpotifyError),
     TE.map(res => res.body),
     TE.fold(
-      (err) => async () => { dispatch(setError(some(err))) },
-      (artist) => async () => {
-        dispatch(setSpotifyArtistFull(some(artist)))
-      }
+      (err) => async () => { dispatch(getErrorAction(err)) },
+      (artist) => async () => { dispatch(setSpotifyArtistFull(some(artist))) }
     )
   )()
 
   dispatch(setLoadingSpotify(false));
 }
 
-export const loadSpotifyArtistId = (artistId: string): ThunkAC<Promise<void>> => async (dispatch) => {
-  dispatch(setLoadingSpotify(true));
+export const loadSearchInputSpotifyArtistId = (artistId: string): ThunkAC<Promise<void>> => async (dispatch) => {
+  dispatch(resetSpotify());
 
+  dispatch(setLoadingSpotify(true));
   await pipe(
-    tryCatch(() => spotify.getArtist(artistId), toError),
+    tryCatch(() =>
+      spotify.getArtist(artistId), toSpotifyError),
     TE.map(res => res.body),
     TE.fold(
-      (err) => async () => { dispatch(setError(some(err))) },
+      (err) => async () => { dispatch(getErrorAction(err)) },
       (artist) => async () => {
         dispatch(setSpotifyArtists([artist]))
-        await dispatch(onLoad())
+        dispatch(setSpotifyArtistFull(some(artist)))
+        dispatch(openSpotifyArtistIdx(0))
       }
     )
   )()
@@ -76,8 +81,9 @@ export const resetDiscogs = (): ThunkAC => (dispatch) => {
 }
 
 export const resetSpotify = (): ThunkAC => (dispatch) => {
-
-
+  dispatch(dispatch(setSpotifyArtistFull(none)));
+  dispatch(setSelectedSpotifyIdx(none));
+  dispatch(setSpotifyArtists([]))
 }
 
 export const openDiscogsArtistIdx = (idx: number): ThunkAC<Promise<void>> => async (dispatch) => {
@@ -156,13 +162,7 @@ export const onLoad = (): ThunkAC<Promise<void>> => async (
   const { spotifyArtists } = getState().app;
 
   if (spotifyArtists.length > 0) {
-
-    dispatch(setSelectedSpotifyIdx(some(0)));
-
-    await dispatch(openCurrentSpotifyArtist());
-    await dispatch(searchDiscogsWithCurrentArtist());
-    dispatch(setSelectedDiscogsIdx(some(0)));
-    await dispatch(loadDiscogsReleases());
+    dispatch(openSpotifyArtistIdx(0))
   }
 
 };
@@ -219,7 +219,7 @@ export const searchDiscogsWithCurrentArtist = (): ThunkAC<
 };
 
 
-const getErrorAction = (error: any): ThunkAC<void> => (dispatch) => {
+const getErrorAction = (error: SpotifyError): ThunkAC<void> => (dispatch) => {
   error.statusCode == 401 ? dispatch(setAccessTokenEpic(none)) : dispatch(setError(some(error)))
 }
 
@@ -230,7 +230,7 @@ export const loadCurrentTrack = (): ThunkAC<Promise<void>> => async (
   dispatch(setLoadingSpotify(true));
 
   pipe(
-    await tryCatch(() => spotify.getMyCurrentPlayingTrack(), toError)(),
+    await tryCatch(() => spotify.getMyCurrentPlayingTrack(), toSpotifyError)(),
     E.map(res => fromNullable(res.body)),
     E.map(O.chain(body => fromNullable(body.item))),
     E.fold(
@@ -247,7 +247,6 @@ export const setAccessTokenEpic = (
   accessToken: Option<string>
 ): ThunkAC => dispatch => {
   dispatch(setAccessToken(accessToken));
-
 
   spotify.setAccessToken(
     isSome(accessToken) ? accessToken.value : ""
@@ -269,9 +268,9 @@ export const openCurrentSpotifyArtist = (): ThunkAC<Promise<void>> => async (
   const { map, chain } = TE
 
   const albums = await pipe(
-    tryCatch(() => spotify.getArtistAlbums(spotifyArtists[selectedSpotifyIdx.value].id), toError),
+    tryCatch(() => spotify.getArtistAlbums(spotifyArtists[selectedSpotifyIdx.value].id), toSpotifyError),
     map(res => res.body.items.map(_ => _.id)),
-    chain(ids => tryCatch(() => spotify.getAlbums(ids), toError)),
+    chain(ids => tryCatch(() => spotify.getAlbums(ids), toSpotifyError)),
     map(res => res.body.albums),
   )();
 
@@ -283,6 +282,6 @@ export const openCurrentSpotifyArtist = (): ThunkAC<Promise<void>> => async (
 
   dispatch(setLoadingSpotify(false));
 
-  await dispatch(loadCurrentSpotifyArtistFull())
+  await dispatch(loadCurrentSpotifyArtistFullObject())
 
 };

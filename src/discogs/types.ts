@@ -329,19 +329,19 @@ export interface TracklistEntity {
   position: string;
   title: string;
   type_: string;
-  artists: TracklistEntityArtist[] | null
+  artists: ArtistsEntityOrExtraartistsEntity[] | null
 }
 
-export interface TracklistEntityArtist {
-  join: string;
-  name: string;
-  anv: string;
-  tracks: string;
-  thumbnail_url: string;
-  role: string;
-  resource_url: string;
-  id: number;
-}
+// export interface TracklistEntityArtist {
+//   join: string;
+//   name: string;
+//   anv: string;
+//   tracks: string;
+//   thumbnail_url: string;
+//   role: string;
+//   resource_url: string;
+//   id: number;
+// }
 
 export interface VideosEntity {
   description: string;

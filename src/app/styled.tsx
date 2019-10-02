@@ -13,7 +13,11 @@ interface StyledTheme {
   textMainColor: string,
   textSecondaryColor: string,
   controlsDivBackgroundColor: string,
-  yearWidth: number
+  tableBorderColor: string,
+  yearWidth: number,
+  tableHeaderColor: string,
+  tableHeaderColor2: string,
+
 }
 
 const mainTheme: StyledTheme = {
@@ -21,6 +25,10 @@ const mainTheme: StyledTheme = {
   textMainColor: "hsla(0, 100%, 100%, .66)",
   textSecondaryColor : "hsla(0, 100%, 100%, .33)",
   controlsDivBackgroundColor: "hsl(0, 0%, 20%)",
+  tableBorderColor: "hsla(0, 100%, 100%, .06)",
+  tableHeaderColor: "#202020",
+  tableHeaderColor2: "#282828",
+  // tableHeaderColor2: "hsl(0, 0%, 8%)",
   yearWidth: 20
 }
 
@@ -28,6 +36,7 @@ const mainTheme: StyledTheme = {
 const GlobalStyle = createGlobalStyle`
   body {
     background: ${props => props.theme.backgroundColor}
+    overflow-y: hidden
   }
 `
 

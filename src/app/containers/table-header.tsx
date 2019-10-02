@@ -5,52 +5,48 @@ import styled from 'app/styled'
 // import { bgMainColor } from 'app/components/styled-common'
 
 const HeaderArtists = styled.th`
-padding-bottom: 4px
+padding-bottom: 8px
+padding-top: 8px
 padding-left: 8px
 position: sticky;
 top: 0;
-background-color: ${props => props.theme.backgroundColor}
+background-color: ${props => props.theme.tableHeaderColor}
 `
 
 const HeaderCaption = styled.th`
-background-color: hsl(0, 0%, 8%);
-border: 0
+padding-bottom: 4px
+// padding-top: 2px
 `
 
-const HeaderRowCaption = styled.tr`
-color: hsla(0, 100%, 100%, .66);
-border-collapse: collapse;
-border: 0
+const HeaderRow = styled.tr`
+color:  ${props => props.theme.textMainColor};
 `
 
 const HeaderRowArtists = styled.tr`
 color: hsla(0, 100%, 100%, .66);
-padding: 4px;
 text-align: left
-background-color: ${props => props.theme.backgroundColor}
 `
 
-const YaerHead = styled.th`
-background-color: hsl(0, 0%, 8%);
-border: 0
-`
+const YaerHead = styled(HeaderCaption)``
 
 export const TableHeader = () => (<>
+
+  <HeaderRow>
+    <HeaderCaption>Spotify</HeaderCaption>
+    <YaerHead></YaerHead>
+    <HeaderCaption>Discogs</HeaderCaption>
+  </HeaderRow>
+
   <HeaderRowArtists>
     <HeaderArtists>
       <SpotifyHeader />
     </HeaderArtists>
-    
+
     <HeaderArtists />
-    
+
     <HeaderArtists>
       <DiscogsHeader />
     </HeaderArtists>
   </HeaderRowArtists>
 
-  <HeaderRowCaption>
-    <HeaderCaption>Spotify</HeaderCaption>
-    <YaerHead></YaerHead>
-    <HeaderCaption>Discogs</HeaderCaption>
-  </HeaderRowCaption>
 </>)

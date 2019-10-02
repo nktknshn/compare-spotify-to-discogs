@@ -47,6 +47,7 @@
     "reselect": "^4.0.0",
     "spotify-web-api-node": "^4.0.0",
     "styled-components": "^4.3.2",
+    "styled-icons": "^8.4.2",
     "ts-jest": "^24.1.0",
     "typesafe-actions": "^4.4.2"
   },

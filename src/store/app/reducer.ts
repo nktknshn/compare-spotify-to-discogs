@@ -28,10 +28,12 @@ const defaultState: AppState = {
   isLoadingSpotify: true,
   isLoadingDiscogs: true,
 
-  showTrackAppearances: true,
+  showTrackAppearances: false,
   showSingles: true,
   showCompilations: true,
   showOtherResults: false,
+
+  showSearchInput: true,
 
   error: none
 }

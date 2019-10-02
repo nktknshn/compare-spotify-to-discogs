@@ -8,6 +8,7 @@ import Spinner from 'Components/spinner'
 import styled from "Styles";
 import { pipe } from "fp-ts/lib/pipeable";
 import { Space } from "Components/space";
+import { MAX_SPOTIFY_STYLEs_TO_SHOW } from "Modules/config";
 
 export const SwitchArtistLink = styled.a<{ current: boolean }>`
 color: ${props => props.theme.textMainColor};
@@ -24,6 +25,7 @@ export const SpotifyHeader: React.FunctionComponent = () => {
   const Styles = () => pipe(
     spotifyArtistFull,
     map(_ => _.genres),
+    map(_ => _.slice(0, MAX_SPOTIFY_STYLEs_TO_SHOW)),
     map(_ => _.join(", ")),
     chain(_ => _.length > 0 ? some(<span>{`(${_})`}</span>) : none),
     getOrElse(() => <span></span>)

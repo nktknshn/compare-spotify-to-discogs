@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   DirectionRow
 } from "app/components/styled-common";
@@ -10,13 +10,15 @@ import { openDiscogsArtistIdx } from "Store/app/epics";
 import { isSome } from "fp-ts/lib/Option";
 import { SwitchArtistLink } from "./spotify-header";
 import styled, { css } from "app/styled";
-import { FaBeer as XSquare } from 'react-icons/fa'
+// import { FaBeer as XSquare } from 'react-icons/fa'
+import { Lock as XSquare } from 'styled-icons/material/Lock'
+import { useOutsideClick } from "app/hooks/use-outside-click";
 
 export const OtherResultsDiv = styled(DirectionRow)`
 position: absolute
 top: 0
 left: 60vw
-background-color: hsl(0, 0%, 4%);
+background-color: ${props => props.theme.controlsDivBackgroundColor};
 padding: 8px
 `
 
@@ -26,13 +28,6 @@ list-style: none
 list-style-type: none
 `
 
-const _XSquare: React.FC<{
-  onClick: () => void
-  size: number
-}> = ({ onClick }) =>
-    <div onClick={onClick}><span>X</span></div>
-
-
 export const StyledSquare = styled(XSquare)`
 color: ${props => props.theme.textMainColor}
 `
@@ -41,16 +36,19 @@ const List = styled.ul`
 list-style-type:none
 `
 
-export const OtherResults: React.FunctionComponent<{
+export const OtherDiscogsResults: React.FunctionComponent<{
   onClose: () => void
 }> = ({ onClose }) => {
   const { discogsSearchResults, selectedDiscogsIdx } = useSelector(
     state => state.app
   );
   const dispatch = useDispatch();
+  const ref = useRef<HTMLDivElement>(null)
+
+  useOutsideClick(ref, onClose)
 
   return (
-    <OtherResultsDiv>
+    <OtherResultsDiv ref={ref}>
       <List>
         {isSome(discogsSearchResults) &&
           discogsSearchResults.value
@@ -69,7 +67,7 @@ export const OtherResults: React.FunctionComponent<{
               </li>
             ))}
       </List>
-      <StyledSquare onClick={onClose} size={20} />
+      {/* <StyledSquare onClick={onClose} size={20} /> */}
     </OtherResultsDiv>
   );
 };

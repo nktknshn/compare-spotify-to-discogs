@@ -5,15 +5,12 @@ import { useDispatch, useSelector } from "Store";
 import { onLoad, setAccessTokenEpic } from "Store/app/epics";
 import { isLoadingComplete } from "Store/selectors";
 import Spinner from './components/spinner';
-import { TextMain, DirectionRow } from "./components/styled-common";
+import { TextMain, DirectionRow, Centered } from "./components/styled-common";
 import { parseTokenFromHash, redirectToAuth, resetHash } from "./modules/hash-and-auth";
 import { ComparisonPage } from "./pages/comparison";
 import styled from "Styles";
 
-const Centered = styled(DirectionRow)`
-margin: 0 auto;
-width: 200px; 
-`
+
 
 const App: React.FunctionComponent = () => {
   const dispatch = useDispatch();
@@ -21,10 +18,8 @@ const App: React.FunctionComponent = () => {
     currentTrack, isLoadingSpotify, artistId, spotifyArtists } = useSelector(state => state.app);
   const spotifyArtistsLoaded = useSelector(isLoadingComplete);
 
-  // const [_accessToken, setAccessToken] = useState<Option<string>>(none)
-
   const isAuthorizing = isNone(accessToken) && isLoadingSpotify
-  const noTrackPlaying = isNone(currentTrack) && isSome(accessToken) && !isLoadingSpotify
+  const noTrackPlaying = isSome(accessToken) && isNone(currentTrack) && !isLoadingSpotify
 
   useEffect(() => {
     const token = parseTokenFromHash();
@@ -40,14 +35,8 @@ const App: React.FunctionComponent = () => {
   if (isAuthorizing)
     return <Centered>
       <Spinner />
-      <TextMain>Authorizing...</TextMain>
+      <TextMain>Redirecting to spotify...</TextMain>
     </Centered>;
-
-
-  if (noTrackPlaying)
-    return (
-      <SearchPage />
-    )
 
   if (spotifyArtistsLoaded)
     return (<>
@@ -55,9 +44,14 @@ const App: React.FunctionComponent = () => {
     </>
     );
 
+  if (noTrackPlaying)
+    return (
+      <SearchPage />
+    )
+
   return <Centered>
     <Spinner />
-    <TextMain>Loading current track...</TextMain>
+    <TextMain>Loading...</TextMain>
   </Centered>;
 };
 
