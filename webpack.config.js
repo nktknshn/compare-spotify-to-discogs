@@ -22,7 +22,7 @@ module.exports = (env) => {
       { from: './public/index-redux.html' },
       // { from: './src/manifest.json' },
     ]),
-    new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin()
   ];
 
   // if (serverMode) plugins.push(new HtmlWebpackPlugin({

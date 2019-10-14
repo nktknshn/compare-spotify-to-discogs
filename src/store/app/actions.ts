@@ -1,7 +1,7 @@
-import { createActionCreator, createReducer, createAction } from 'deox'
-import { fromNullable, Option } from 'fp-ts/lib/Option'
+import { createAction, createActionCreator } from 'deox'
+import { Option } from 'fp-ts/lib/Option'
+import { Release } from 'typescript-discogs-client'
 import { AppState } from './types'
-import { TracklistEntity } from 'discogs/types'
 
 
 export const setCurrentTrack = createActionCreator('SET_CURRENT_TRACK',
@@ -34,6 +34,7 @@ export const setSelectedDiscogsIdx = createActionCreator('SET_SELECTED_DISCOGS_I
 export const toggleShowSingles = createAction('TOGGLE_SINGLES')
 export const toggleShowCompilations = createAction('TOGGLE_COMPILATIONS')
 export const toggleShowTrackAppearances = createAction('TOGGLE_TRACK_APPEARANCES')
+export const toggleShowMainReleases = createAction('TOGGLE_MAIN_RELEASES')
 
 export const setDiscogsReleases = createActionCreator('SET_DISCOGS_RELEASES',
   resolve => (res: AppState['discogsReleases']) => resolve(res))
@@ -42,7 +43,7 @@ export const setShowOtherResults = createActionCreator('SET_SHOW_OTHER_RESULTS',
   resolve => (res: AppState['showOtherResults']) => resolve(res))
 
 export const addDiscogsReleaseTracks = createActionCreator('ADD_DISCOGS_TRACKS',
-  resolve => (releaseId: number, tracks: TracklistEntity[]) => resolve({ releaseId, tracks }))
+  resolve => (releaseId: number, tracks: Release['tracklist']) => resolve({ releaseId, tracks }))
 
 export const resetDiscogsReleaseTracks = createAction('RESET_DISCOGS_TRACKS')
 export const resetTracks = createAction('RESET_DISCOGS_TRACKS')
@@ -66,3 +67,6 @@ export const setArtistId = createActionCreator('SET_ARTIST_ID',
 
 export const setSpotifyArtistFull = createActionCreator('SET_SPOTIFY_ARTIST_FULL',
   resolve => (artist: AppState['spotifyArtistFull']) => resolve(artist))
+
+export const setDiscogsGenres = createActionCreator('SET_DISCOGS_GENRES',
+  resolve => (genres: string[]) => resolve(genres))

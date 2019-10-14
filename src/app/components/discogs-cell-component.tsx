@@ -1,23 +1,36 @@
-import { TrackLink, TextSecondary } from "app/components/styled-common";
-import { isDiscogsRelease, isDiscogsTrack } from "app/modules/type-guards";
-import * as DiscogsApi from "discogs/types";
-import { DiscogsCellItem } from "types";
-import React from "react";
+import { TextSecondary, TrackLink } from "app/components/styled-common";
 import { DiscogsCell } from "app/containers/table-row";
 import { Space } from "Components/space";
+import React from "react";
+import { Track } from "Store/app/types";
+import styled from "Styles";
+import { ArtistReleaseOrMaster, MasterArtist, ReleaseArtist } from "typescript-discogs-client";
 
+export const TrackArtistLink = styled.a`
+color: ${props => props.theme.textSecondaryColor};
+text-decoration: none;
+`
 
-export const DiscogsTrackComponent: React.FC<{ track: DiscogsApi.TracklistEntity }> =
+const artistsToLinks = (artists: (ReleaseArtist | MasterArtist)[]) =>
+  artists.map(a =>
+    <TrackArtistLink href={"https://discogs.com/artist/" + a.id}>{a.name}</TrackArtistLink>
+  )
+
+export const DiscogsTrackComponent: React.FC<{ track: Track }> =
   ({ track }) => <DiscogsCell>
     <TextSecondary>
-      {track.position} {track.artists && " - " + track.artists.map(_ => _.name).join(", ")} - {track.title}
+      {track.position}
+      <Space />
+      {track.extraartists && <> <span> - </span>{artistsToLinks(track.extraartists)}</>}
+      <Space />
+      - {track.title}
     </TextSecondary>
   </DiscogsCell>
 
 
 export const DiscogsReleaseComponent: React.FunctionComponent<{
-  item: DiscogsApi.ReleasesEntity;
-  onClickRelease: (release: DiscogsApi.ReleasesEntity) => void;
+  item: ArtistReleaseOrMaster;
+  onClickRelease: (release: ArtistReleaseOrMaster) => void;
 }> = ({ item: discogs, onClickRelease }) => {
   return (
     <DiscogsCell>

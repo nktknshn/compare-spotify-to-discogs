@@ -1,11 +1,12 @@
 import { Option } from "fp-ts/lib/Option";
-import {
-  SearchResponseEntity,
-  ReleasesEntity,
-  TracklistEntity
-} from "discogs/types";
 
-export interface DiscogsTracks { [releaseId: number]: TracklistEntity[] }
+import * as Discogs from 'typescript-discogs-client'
+import { Master, Release, MasterTrack, ReleaseTrack } from "typescript-discogs-client";
+
+
+export type Track = MasterTrack | ReleaseTrack
+
+export interface DiscogsTracks { [releaseId: number]: Track[] }
 
 export interface AppState {
   accessToken: Option<string>;
@@ -17,12 +18,13 @@ export interface AppState {
   spotifyArtists: SpotifyApi.ArtistObjectSimplified[];
   spotifyArtistFull: Option<SpotifyApi.ArtistObjectFull>;
   spotifyAlbums: SpotifyApi.AlbumObjectFull[];
-
-  discogsSearchResults: Option<SearchResponseEntity[]>;
-  discogsReleases: ReleasesEntity[];
-
   selectedSpotifyIdx: Option<number>;
+  spotifyTracks: string[];
+
+  discogsSearchResults: Option<Discogs.SearchResult[]>;
+  discogsReleases: Discogs.ArtistReleaseOrMaster[];
   selectedDiscogsIdx: Option<number>;
+  discogsTracks: DiscogsTracks;
 
   isLoadingSpotify: boolean;
   isLoadingDiscogs: boolean;
@@ -30,12 +32,12 @@ export interface AppState {
   showTrackAppearances: boolean;
   showSingles: boolean;
   showCompilations: boolean;
+  showMainReleases: boolean;
   
   showOtherResults: boolean;
   showSearchInput: boolean;
-
-  spotifyTracks: string[];
-  discogsTracks: DiscogsTracks;
-
+  
+  discogsGenres: string[],
+  
   error: Option<any>;
 }

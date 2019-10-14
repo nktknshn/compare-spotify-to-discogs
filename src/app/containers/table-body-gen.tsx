@@ -1,19 +1,17 @@
-import { TextMain, TextSecondary } from "app/components/styled-common";
-import { makeTableRows } from "app/modules/make-table-rows";
-import React from "react";
-import { useDispatch, useSelector } from "Store";
-import { TableRow } from "./table-row";
-import { SpotifyCellItem, DiscogsCellItem } from "types";
-import * as DiscogsApi from '../../discogs/types'
-import { map, flatten, uniq, sort, filter } from "fp-ts/lib/Array";
-import { pipe } from "fp-ts/lib/pipeable";
-import { eqAlbumName, ordAlbumName } from "app/modules/group-albums-spotify";
 import { HIDDEN_DISCOGS_ROLES } from "app/modules/config";
+import { eqAlbumName, ordAlbumName } from "app/modules/group-albums-spotify";
 import { ordReleaseName } from "app/modules/group-discogs-albums";
-
+import { makeTableRows } from "app/modules/make-table-rows";
+import { filter, sort, uniq } from "fp-ts/lib/Array";
+import { pipe } from "fp-ts/lib/pipeable";
+import React from "react";
+import { useSelector } from "Store";
+// import * as DiscogsApi from '../../discogs/_types';
+import { TableRow } from "./table-row";
+import Discogs from 'typescript-discogs-client'
 
 const filterDiscogsReleasesRoles = (withoutRoles: string[]) =>
-  (rs: DiscogsApi.ReleasesEntity[]) =>
+  (rs: Discogs.ArtistReleaseOrMaster[]) =>
     rs
       .filter(_ => withoutRoles.indexOf(_.role) == -1)
 
@@ -31,9 +29,11 @@ export const TableBodyGen: React.FunctionComponent = () => {
     spotifyTracks,
     discogsReleases,
     discogsTracks,
+    
     showSingles,
     showTrackAppearances,
-    showCompilations
+    showCompilations,
+    showMainReleases
   } = useSelector(state => state.app);
 
   const rows = makeTableRows(
@@ -50,7 +50,8 @@ export const TableBodyGen: React.FunctionComponent = () => {
           discogsReleases,
           filterDiscogsReleasesRoles([
             ...HIDDEN_DISCOGS_ROLES,
-            ...(!showTrackAppearances ? ['TrackAppearance'] : [])
+            ...(!showTrackAppearances ? ['TrackAppearance'] : []),
+            ...(!showMainReleases ? ['Main'] : [])
           ]),
           sort(ordReleaseName)
         ),

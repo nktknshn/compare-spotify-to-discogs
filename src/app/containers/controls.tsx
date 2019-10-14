@@ -1,16 +1,16 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'Store'
-import { TextMain, Spacer, GitHubLogoDiv } from 'Components/styled-common'
-import { toggleShowSingles, toggleShowTrackAppearances, toggleShowCompilations } from 'Store/app/actions'
+import { TextMain, VerticalSpacer, GitHubLogoDiv } from 'Components/styled-common'
+import { toggleShowSingles, toggleShowTrackAppearances, toggleShowCompilations, toggleShowMainReleases } from 'Store/app/actions'
 import styled from 'Styles'
 
 const CheckboxLabel = styled(TextMain)`
-cursor: pointer
+cursor: pointer;
 `
 
 export const Controls: React.FunctionComponent = () => {
 
-  const { showCompilations, showSingles, showTrackAppearances } = useSelector(s => s.app)
+  const { showCompilations, showSingles, showTrackAppearances, showMainReleases } = useSelector(s => s.app)
   const dispatch = useDispatch()
 
   return (
@@ -41,7 +41,15 @@ export const Controls: React.FunctionComponent = () => {
         <CheckboxLabel>Show track appearances</CheckboxLabel>
       </div>
 
-      <Spacer height={"50px"} />
+      <div onClick={() => { dispatch(toggleShowMainReleases()) }}>
+        <input
+          checked={showMainReleases}
+          type="checkbox"
+        />
+        <CheckboxLabel>Show main releases</CheckboxLabel>
+      </div>
+
+      <VerticalSpacer height={"50px"} />
       <GitHubLogoDiv></GitHubLogoDiv>
     </>
   )

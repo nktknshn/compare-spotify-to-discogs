@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
-import styled from 'Styles'
-import { useDispatch } from 'Store'
+import { DirectionRow } from 'Components/styled-common'
+import { fold } from 'fp-ts/lib/Option'
 import { pipe } from 'fp-ts/lib/pipeable'
 import { parseSpotifyUrl } from 'Modules/parse-spotify-url'
-import { fold } from 'fp-ts/lib/Option'
-import { loadSearchInputSpotifyArtistId } from 'Store/app/epics'
-import { DirectionRow } from 'Components/styled-common'
-import { Search as SearchIcon } from 'styled-icons/fa-solid/Search';
+import React, { useState } from 'react'
+import { useDispatch } from 'Store'
+import { searchSpotify } from 'Store/app/epics'
+import { Search as SearchIcon } from 'styled-icons/fa-solid/Search'
+import styled from 'Styles'
 
 const InputContainer = styled(DirectionRow)`
 background-color: hsl(0, 0%, 11%);
 color: ${props => props.theme.textMainColor};
 border: 2px solid ${props => props.theme.textMainColor};
-padding-left: 8px
+padding-left: 8px;
 border-radius: 16px;
 font-size: 28px;
 width: 90%;
@@ -25,7 +25,7 @@ color: ${props => props.theme.textMainColor};
 border-color: transparent;
 width: 100%;
 background-color: inherit;
-font-size: inherit
+font-size: inherit;
 `
 
 const SearchButton = styled(SearchIcon)`
@@ -44,7 +44,7 @@ export const SearchInput: React.FC<{ className?: string }> = ({ className }) => 
     parseSpotifyUrl(value),
     fold(
       () => { },
-      (id) => dispatch(loadSearchInputSpotifyArtistId(id))
+      (id) => { dispatch(searchSpotify(id)) }
     ))
 
   return (
