@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from "Store";
 import { setShowOtherResults } from "Store/app/actions";
 import { Search as SearchIcon } from 'styled-icons/fa-solid/Search';
+import { Play as PlayIcon } from 'styled-icons/fa-solid/Play';
 import { DirectionColumns, DirectionRow } from "../components/styled-common";
 import { OtherDiscogsResults as OtherDiscogsResults } from "../containers/other-discogs-results";
 import { TableBodyGen } from "../containers/table-body-gen";
@@ -21,7 +22,7 @@ export const TableDiv = styled.div`
 margin: auto;
 width: calc(100% - 40px);
 max-height: 95vh;
-overflow-y: auto
+overflow-y: auto;
 `
 
 export const Table = styled.table`
@@ -30,25 +31,39 @@ width: 100%;
 `
 
 export const ControlsDiv = styled(DirectionRow)`
-margin-top: 12px
-font-size: small
-padding: 8px
+margin-top: 12px;
+font-size: small;
+padding: 8px;
 border-radius: 6px;
-height: 2vh
+height: 2vh;
 background-color: ${props => props.theme.controlsDivBackgroundColor};
 `
 
 const SearchInputTrigger = styled.div`
-width: 32px
-height: 32px
+width: 32px;
+height: 32px;
 background-color: transparent;
 color: ${props => props.theme.textMainColor};
 position: absolute;
 z-index: 1;
 right: 0;
 top: 0; 
-padding: 4px
-cursor: pointer
+padding: 4px;
+cursor: pointer;
+border-radius: 8px;
+`
+
+const RefreshTrigger = styled.div`
+width: 28px;
+height: 28px;
+background-color: transparent;
+color: ${props => props.theme.textMainColor};
+position: absolute;
+z-index: 1;
+right: 0;
+top: 38px; 
+padding: 4px;
+cursor: pointer;
 border-radius: 8px;
 `
 
@@ -79,12 +94,16 @@ export const ComparisonPage: React.FunctionComponent = () => {
         <OtherDiscogsResults
           onClose={() => dispatch(setShowOtherResults(false))} />}
 
-      {showSearchInput && 
+      {showSearchInput &&
         <FloatingSearchInput onClose={() => setShowSearchInput(false)} />}
 
       <SearchInputTrigger onClick={() => setShowSearchInput(true)}>
-        <SearchIcon />
+        <SearchIcon title="By Spotify URI"/>
       </SearchInputTrigger>
+c
+      <RefreshTrigger onClick={() => window.location.reload()}>
+        <PlayIcon title="Current song"/>
+      </RefreshTrigger>
       {/* <Error /> */}
     </MainContainer>
   )

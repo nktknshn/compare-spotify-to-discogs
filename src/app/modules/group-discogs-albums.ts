@@ -1,11 +1,16 @@
-import { ReleasesEntity, TracklistEntity } from "discogs/types";
+// import { ReleasesEntity, TracklistEntity } from "discogs/_types";
 import { pipe } from 'fp-ts/lib/pipeable'
 import { groupBy, NonEmptyArray, sort } from "fp-ts/lib/NonEmptyArray";
-import { ord, ordString } from "fp-ts/lib/Ord";
+import { ord, ordString, ordNumber } from "fp-ts/lib/Ord";
 import { flatten, map } from "fp-ts/lib/Array";
+import { ArtistReleaseOrMaster } from 'typescript-discogs-client';
+import { MasterTrack } from 'typescript-discogs-client/dist/types/master';
+import { ReleaseTrack } from 'typescript-discogs-client/dist/types/release';
+import { DiscogsTracks } from 'Store/app/types';
 
-type Album = ReleasesEntity
+type Album = ArtistReleaseOrMaster
 export const ordReleaseName = ord.contramap(ordString, (a: Album) => a.title)
+export const ordId = ord.contramap(ordNumber, (a: Album) => a.id)
 
 export const groupByYear = (albums: Album[]) =>
   pipe(
@@ -14,7 +19,7 @@ export const groupByYear = (albums: Album[]) =>
   )
 
 export const expandReleases =
-  (expandAlbums: { [releaseId: number]: TracklistEntity[] }) =>
+  (expandAlbums: DiscogsTracks) =>
     (albums: Array<Album>) =>
       pipe(
         albums,

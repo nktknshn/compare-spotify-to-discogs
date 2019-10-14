@@ -3,18 +3,12 @@
   "configurations": [
     {
       "type": "chrome",
-      // "runtimeExecutable": "/usr/bin/chromium",
       "request": "attach",
       "name": "Attach Chromium React",
       "port": 9222,
-      // "url": "http://localhost:8080",
       "urlFilter": "*",
       "webRoot": "${workspaceFolder}",
       "sourceMaps": true,
-      // "sourceMapPathOverrides": {
-      //     "webpack:///*": "${workspaceRoot}/src/*"
-      // },
-      // "preLaunchTask": "build-react"
     },
     {
       "type": "node",
@@ -28,15 +22,6 @@
         "--config",
         "${workspaceRoot}/jest.config.js"
       ],
-      // "windows": {
-      //   "args": [
-      //     "--inspect-brk",
-      //     "${workspaceRoot}/node_modules/jest/bin/jest.js",
-      //     "--runInBand"
-      //     "--config",
-      //     "${workspaceRoot}/jest.config.json"          
-      //   ],
-      // },
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },

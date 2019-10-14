@@ -1,13 +1,8 @@
 import React from 'react'
-import ClipLoader from "react-spinners/ClipLoader"
-// import { textMainColor } from "./styled-common";
-import { LoaderSizeProps } from 'react-spinners/interfaces';
-// import { css } from '@emotion/core';
 import styled, { keyframes } from 'app/styled';
-import { css } from 'app/styled';
 
 
-const Spinner = (props: LoaderSizeProps) =>
+const Spinner = (props: {size: number}) =>
   <CssSpinner
     size={12}
     {...props} />
@@ -29,7 +24,7 @@ const CssSpinner = styled.div<{size: number}>`
   animation: ${rotate360} 1s linear infinite;
   transform: translateZ(0);
   float:left;
-  margin-right: 4px
+  margin-right: 4px;
 
   border-top: 2px solid ${props => props.theme.textMainColor};
   border-right: 2px solid ${props => props.theme.textMainColor};

@@ -18,6 +18,8 @@ const eqYear = fromEquals(
 
 export const ordAlbumName = ord.contramap(ordString, (a: Album) => a.name);
 
+export const ordReleaseDate = ord.contramap(ordString, (a: Album) => a.release_date);
+
 export const groupByYear = (spotifyAlbums: Album[]) =>
   pipe(
     spotifyAlbums,

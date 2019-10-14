@@ -12,7 +12,7 @@ import { MAX_SPOTIFY_STYLEs_TO_SHOW } from "Modules/config";
 
 export const SwitchArtistLink = styled.a<{ current: boolean }>`
 color: ${props => props.theme.textMainColor};
-font-weight: ${(props) => props.current ? 'bold' : 'normal'}
+font-weight: ${(props) => props.current ? 'bold' : 'normal'};
 `
 // color: ${props => props.current ? props.theme.textMainColor : props.theme.textSecondaryColor};
 
@@ -22,7 +22,7 @@ export const SpotifyHeader: React.FunctionComponent = () => {
   );
   const dispatch = useDispatch();
 
-  const Styles = () => pipe(
+  const ArtistStyles = () => pipe(
     spotifyArtistFull,
     map(_ => _.genres),
     map(_ => _.slice(0, MAX_SPOTIFY_STYLEs_TO_SHOW)),
@@ -44,11 +44,12 @@ export const SpotifyHeader: React.FunctionComponent = () => {
           >
             {_.name}
           </SwitchArtistLink>
-          
-          {isSome(selectedSpotifyIdx) && selectedSpotifyIdx.value == idx && <TextSecondary>
-            <Space />
-            <Styles />
-          </TextSecondary>}
+
+          {isSome(selectedSpotifyIdx) && selectedSpotifyIdx.value == idx &&
+            <TextSecondary>
+              <Space />
+              <ArtistStyles />
+            </TextSecondary>}
 
           &nbsp;
                 </React.Fragment>

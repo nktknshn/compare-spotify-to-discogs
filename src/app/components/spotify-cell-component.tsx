@@ -1,6 +1,4 @@
 import { TrackLink, TextSecondary } from "app/components/styled-common";
-import { isSpotifyAlbum, isSpotifyTrack } from "app/modules/type-guards";
-import { SpotifyCellItem } from "types";
 import React from "react";
 import { SpotifyCell } from "app/containers/table-row";
 import { Space } from "./space";

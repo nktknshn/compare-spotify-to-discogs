@@ -1,4 +1,4 @@
-import styled from 'app/styled'
+import styled, { keyframes } from 'app/styled'
 
 
 // export const bgMainColor = "background-color: #282828"
@@ -9,9 +9,10 @@ export const TextMain = styled.span`
 color: ${({ theme }) => theme.textMainColor};
 `
 
-export const TextSecondary = styled(TextMain)`
+export const TextSecondary = styled.span`
 color: ${props => props.theme.textSecondaryColor};
-font-size: smaller
+font-size: smaller;
+font-weight: normal;
 `
 
 export const DirectionColumns = styled.div`
@@ -21,25 +22,22 @@ flex-direction: column;
 export const DirectionRow = styled.div`
 display: flex;
 flex-direction: row;
+//justify-content: flex-end;
 `
 
-export const Title = styled.div`
-// color: hsla(0, 100%, 100%, .66);
-`
-
-export const Spacer = styled.div<{ height: string }>`
-height: ${(props) => props.height}
+export const VerticalSpacer = styled.div<{ height: string }>`
+height: ${(props) => props.height};
 `
 
 export const TrackLink = styled.a<{ current?: boolean }>`
 color: hsla(0, 100%, 100%, .66);
 text-decoration: none;
-font-weight: ${(props) => props.current ? 'bold' : 'normal'}
+font-weight: ${(props) => props.current ? 'bold' : 'normal'};
 `
 
 export const GitHubLogoDiv = styled.div`
-background: url("https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png")
-width: 30px
+background: url("https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png");
+width: 30px;
 `
 
 export const GitHubLogo = styled.img`
@@ -50,4 +48,8 @@ max-height: 80%;
 export const Centered = styled(DirectionRow)`
 margin: 0 auto;
 width: 200px; 
+`
+
+export const HorizontalSpacer = styled.div`
+width: auto;
 `

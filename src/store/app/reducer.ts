@@ -16,23 +16,23 @@ const defaultState: AppState = {
   spotifyAlbums: [],
   spotifyTracks: [],
 
-  // discogsArtist: none,
   discogsSearchResults: none,
   discogsReleases: [],
   discogsTracks: {},
+  discogsGenres: [],
 
   selectedSpotifyIdx: none,
   selectedDiscogsIdx: none,
 
-  // isLoading: true,
   isLoadingSpotify: true,
   isLoadingDiscogs: true,
 
   showTrackAppearances: false,
   showSingles: true,
-  showCompilations: true,
-  showOtherResults: false,
+  showCompilations: false,
+  showMainReleases: true,
 
+  showOtherResults: false,
   showSearchInput: true,
 
   error: none
@@ -41,10 +41,11 @@ const defaultState: AppState = {
 
 export const appReducer = createReducer(defaultState, handleAction => [
   handleAction(actions.setError, (state, { payload }) => ({ ...state, error: payload })),
+
   handleAction(actions.toggleShowSingles, (state) => ({ ...state, showSingles: !state.showSingles })),
   handleAction(actions.toggleShowCompilations, (state) => ({ ...state, showCompilations: !state.showCompilations })),
-
   handleAction(actions.toggleShowTrackAppearances, (state) => ({ ...state, showTrackAppearances: !state.showTrackAppearances })),
+  handleAction(actions.toggleShowMainReleases, (state) => ({ ...state, showMainReleases: !state.showMainReleases })),
 
   handleAction(actions.setCurrentTrack, (state, { payload }) => ({ ...state, currentTrack: payload })),
   handleAction(actions.setArtistId, (state, { payload }) => ({ ...state, artistId: payload })),
@@ -62,6 +63,7 @@ export const appReducer = createReducer(defaultState, handleAction => [
   handleAction(actions.setShowOtherResults, (state, { payload }) => ({ ...state, showOtherResults: payload })),
   handleAction(actions.resetDiscogsReleaseTracks, (state) => ({ ...state, discogsTracks: {} as AppState['discogsTracks'] })),
   handleAction(actions.resetSpotifyAlbumTracks, (state) => ({ ...state, spotifyTracks: [] as AppState['spotifyTracks'] })),
+  
   handleAction(actions.addDiscogsReleaseTracks, (state, { payload }) => ({
     ...state, discogsTracks: {
       ...state.discogsTracks,
@@ -81,5 +83,6 @@ export const appReducer = createReducer(defaultState, handleAction => [
     ...state, spotifyTracks: [payload, ...state.spotifyTracks]
   })),
 
-  handleAction(actions.setSpotifyArtistFull, (state, { payload }) => ({ ...state, spotifyArtistFull: payload }))
+  handleAction(actions.setSpotifyArtistFull, (state, { payload }) => ({ ...state, spotifyArtistFull: payload })),
+  handleAction(actions.setDiscogsGenres, (state, { payload }) => ({ ...state, discogsGenres: payload }))
 ])
