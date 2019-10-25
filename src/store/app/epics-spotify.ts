@@ -12,11 +12,18 @@ import { setAccessTokenEpic } from "./epics-token";
 
 const toSpotifyError = (error: any) => error as SpotifyError;
 
-type SpotifyError = { statusCode: number };
+type SpotifyError = { statusCode: number, message: string };
 
 const getErrorAction = (error: SpotifyError): ThunkAC<void> => (dispatch) => {
-  return error.statusCode == 401 ? setAccessTokenEpic(none) : setError(some(error))
+  return error.statusCode == 401
+    ? dispatch(setAccessTokenEpic(none))
+    : dispatch(setError(some({
+      name: "SpotifyError",
+      message: error.message,
+      code: error.statusCode
+    })))
 }
+
 
 export const loadCurrentSpotifyAlbums = (): ThunkAC<Promise<void>> => async (dispatch, getState) => {
 
@@ -45,7 +52,6 @@ export const loadCurrentSpotifyAlbums = (): ThunkAC<Promise<void>> => async (dis
   dispatch(setLoadingSpotify(false));
 
 }
-
 
 export const loadCurrentTrack = (): ThunkAC<Promise<Option<SpotifyApi.TrackObjectFull>>> => async (
   dispatch,

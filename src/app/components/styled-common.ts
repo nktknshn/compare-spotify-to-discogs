@@ -53,3 +53,24 @@ width: 200px;
 export const HorizontalSpacer = styled.div`
 width: auto;
 `
+
+export const popupAnimation = keyframes`
+0%{
+  transform: scale(0.3);
+}
+100%{
+  transform: scale(1);
+}
+`
+
+export const Overlay = styled.div`
+position: fixed;
+background-color: ${props => props.theme.overlayBackgroundColor};
+z-index: 2;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+/* opacity: 0.9; */
+// animation: ${popupAnimation} 0.1s;
+`

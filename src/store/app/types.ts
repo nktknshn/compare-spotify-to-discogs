@@ -3,6 +3,11 @@ import { Option } from "fp-ts/lib/Option";
 import * as Discogs from 'typescript-discogs-client'
 import { Master, Release, MasterTrack, ReleaseTrack } from "typescript-discogs-client";
 
+export type AppError = {
+  name: string,
+  message: string,
+  code: number
+}
 
 export type Track = MasterTrack | ReleaseTrack
 
@@ -39,5 +44,5 @@ export interface AppState {
   
   discogsGenres: string[],
   
-  error: Option<any>;
+  error: Option<AppError>;
 }

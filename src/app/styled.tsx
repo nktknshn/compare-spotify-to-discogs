@@ -17,7 +17,8 @@ interface StyledTheme {
   yearWidth: number,
   tableHeaderColor: string,
   tableHeaderColor2: string,
-
+  overlayBackgroundColor: string,
+  searchInputBackground: string,
 }
 
 const mainTheme: StyledTheme = {
@@ -28,6 +29,8 @@ const mainTheme: StyledTheme = {
   tableBorderColor: "hsla(0, 100%, 100%, .06)",
   tableHeaderColor: "#202020",
   tableHeaderColor2: "#282828",
+  searchInputBackground: "hsl(0, 0%, 11%)",
+  overlayBackgroundColor: "hsla(0, 0%, 20%, 0.9)",
   // tableHeaderColor2: "hsl(0, 0%, 8%)",
   yearWidth: 20
 }
@@ -35,11 +38,10 @@ const mainTheme: StyledTheme = {
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background: ${props => props.theme.backgroundColor}
-    overflow-y: hidden
+    background: ${props => props.theme.backgroundColor};
+    overflow-y: hidden;
   }
 `
-
 
 const ThemeProvider: React.FC = (props) => {
   return <styledComponents.ThemeProvider theme={mainTheme}>

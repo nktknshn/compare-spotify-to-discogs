@@ -8,13 +8,19 @@ import { pipe } from "fp-ts/lib/pipeable";
 import { ThunkAC } from "Store";
 import { isReleaseExpanded } from "Store/selectors";
 import * as Discogs from 'typescript-discogs-client';
-import { Master, Release } from "typescript-discogs-client";
+import { Master, Release, DiscogsError } from "typescript-discogs-client";
 import {
   addDiscogsReleaseTracks, removeDiscogsReleaseTracks, setDiscogsGenres,
   // setDiscogsArtist,
   setDiscogsReleases, setDiscogsSearchResults, setError, setLoadingDiscogs
 } from "./actions";
+import { AppError } from "./types";
 
+const toAppError = (error: DiscogsError): AppError => ({
+  name: "DiscogsError",
+  message: error.message,
+  code: error.code || -1
+})
 
 export const toggleDiscogsReleaseTracks = (release: Discogs.ArtistRelease | Discogs.ArtistMaster):
   ThunkAC<Promise<void>> =>
@@ -36,7 +42,8 @@ export const toggleDiscogsReleaseTracks = (release: Discogs.ArtistRelease | Disc
         dispatch(addDiscogsReleaseTracks(release.id, res.tracklist))
 
       } catch (error) {
-        dispatch(setError(some(error)))
+        if(error instanceof DiscogsError)
+          dispatch(setError(some(toAppError(error))))
       }
 
     }

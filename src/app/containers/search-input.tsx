@@ -9,7 +9,7 @@ import { Search as SearchIcon } from 'styled-icons/fa-solid/Search'
 import styled from 'Styles'
 
 const InputContainer = styled(DirectionRow)`
-background-color: hsl(0, 0%, 11%);
+background-color: ${props => props.theme.searchInputBackground};
 color: ${props => props.theme.textMainColor};
 border: 2px solid ${props => props.theme.textMainColor};
 padding-left: 8px;

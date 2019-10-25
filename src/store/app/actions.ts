@@ -3,7 +3,6 @@ import { Option } from 'fp-ts/lib/Option'
 import { Release } from 'typescript-discogs-client'
 import { AppState } from './types'
 
-
 export const setCurrentTrack = createActionCreator('SET_CURRENT_TRACK',
   resolve => (track: Option<SpotifyApi.TrackObjectFull>) => resolve(track))
 

@@ -13,7 +13,6 @@ import { loadCurrentSpotifyAlbums, loadCurrentSpotifyArtistFullObject, loadCurre
 //   <T extends ThunkDispatch<AppState, undefined, AllActions>>(d: T) =>
 //     (err: any) => async () => { d(getErrorAction(err)) }
 
-
 export const onMainPageLoad = (): ThunkAC<Promise<void>> => async (
   dispatch,
   getState
@@ -25,7 +24,6 @@ export const onMainPageLoad = (): ThunkAC<Promise<void>> => async (
     dispatch(setSpotifyArtists(currentTrack.value.artists));
     dispatch(openSpotifyArtistIdx(0))
   }
-
 };
 
 export const searchSpotify = (artistId: string): ThunkAC<Promise<void>> => async (dispatch) => {
