@@ -35,7 +35,7 @@ const App: React.FunctionComponent = () => {
 
   if (isAuthorizing)
     return <Centered>
-      <Spinner />
+      <Spinner size={12}/>
       <TextMain>Redirecting to spotify...</TextMain>
     </Centered>;
 
@@ -51,7 +51,7 @@ const App: React.FunctionComponent = () => {
     )
 
   return <Centered>
-    <Spinner />
+    <Spinner size={12}/>
     <TextMain>Loading...</TextMain>
   </Centered>;
 };

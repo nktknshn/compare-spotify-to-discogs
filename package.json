@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc && browserify dist/index.js > dist/index.build.js",
-    "build-react": "tsc && browserify --debug dist/index-react.js > dist/index-react.build.js"
+    "build": "webpack -p"
   },
   "author": "",
   "license": "ISC",
@@ -26,7 +25,7 @@
     "styled-icons": "^8.4.2",
     "ts-jest": "^24.1.0",
     "typesafe-actions": "^4.4.2",
-    "typescript-discogs-client": "git+https://github.com/nktknshn/typescript-discogs-client"
+    "typescript-discogs-client": "file:../typescript-discogs-client"
   },
   "devDependencies": {
     "@types/jest": "^24.0.19",

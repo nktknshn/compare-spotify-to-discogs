@@ -1,7 +1,7 @@
 import { Option, isSome } from "fp-ts/lib/Option";
 import { ThunkAC } from "Store";
 import { setAccessToken } from "./actions";
-import { spotify } from "spotify";
+import { spotify } from "../../spotify";
 
 export const setAccessTokenEpic = (
   accessToken: Option<string>

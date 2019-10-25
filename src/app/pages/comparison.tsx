@@ -100,7 +100,7 @@ export const ComparisonPage: React.FunctionComponent = () => {
       <SearchInputTrigger onClick={() => setShowSearchInput(true)}>
         <SearchIcon title="By Spotify URI"/>
       </SearchInputTrigger>
-c
+
       <RefreshTrigger onClick={() => window.location.reload()}>
         <PlayIcon title="Current song"/>
       </RefreshTrigger>

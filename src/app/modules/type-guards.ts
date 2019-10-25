@@ -1,5 +1,5 @@
 import { SpotifyCellItem, DiscogsCellItem } from "types";
-import { ArtistReleaseOrMaster } from "typescript-discogs-client";
+import { ArtistRelease, ArtistMaster } from "typescript-discogs-client";
 import { Track } from "Store/app/types";
 // import * as DiscogsApi from 'discogs/_types'
 
@@ -11,7 +11,7 @@ export function isSpotifyTrack(item: SpotifyCellItem): item is SpotifyApi.TrackO
     return item.type == 'track'
 }
 
-export function isDiscogsRelease(item: DiscogsCellItem): item is ArtistReleaseOrMaster {
+export function isDiscogsRelease(item: DiscogsCellItem): item is (ArtistRelease | ArtistMaster) {
     return (typeof item !== 'string' && ("status" in item || "main_release" in item))
 }
 

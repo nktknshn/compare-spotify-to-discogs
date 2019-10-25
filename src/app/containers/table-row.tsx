@@ -3,7 +3,7 @@ import { SpotifyAlbumComponent, SpotifyTrackComponent } from 'app/components/spo
 import { TextMain, YearWidth } from 'app/components/styled-common';
 import { isDiscogsRelease, isDiscogsTrack, isSpotifyAlbum, isSpotifyTrack } from 'app/modules/type-guards';
 import styled from 'app/styled';
-import Discogs from 'typescript-discogs-client';
+import Discogs, { ArtistRelease, ArtistMaster } from 'typescript-discogs-client';
 import { isNone, isSome, map } from 'fp-ts/lib/Option';
 import { pipe } from "fp-ts/lib/pipeable";
 import React from 'react';
@@ -54,7 +54,7 @@ export const TableRow: React.FunctionComponent<{
   const handleClickAlbum = (album: SpotifyApi.AlbumObjectFull) =>
     dispatch(toggleSpotifyReleaseTracks(album))
 
-  const handleClickRelease = (release: Discogs.ArtistReleaseOrMaster) =>
+  const handleClickRelease = (release: (ArtistRelease | ArtistMaster)) =>
     dispatch(toggleDiscogsReleaseTracks(release))
 
   const isCurrentAlbum = (album: SpotifyApi.AlbumObjectFull) =>

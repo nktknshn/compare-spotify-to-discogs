@@ -22,7 +22,7 @@ export interface AppState {
   spotifyTracks: string[];
 
   discogsSearchResults: Option<Discogs.SearchResult[]>;
-  discogsReleases: Discogs.ArtistReleaseOrMaster[];
+  discogsReleases: (Discogs.ArtistRelease | Discogs.ArtistMaster)[];
   selectedDiscogsIdx: Option<number>;
   discogsTracks: DiscogsTracks;
 

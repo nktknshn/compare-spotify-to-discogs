@@ -19,7 +19,7 @@ module.exports = (env) => {
   const plugins = [
     new CopyWebpackPlugin([
       // { from: './public/index.html' },
-      { from: './public/index-redux.html' },
+      { from: './public/index.html' },
       // { from: './src/manifest.json' },
     ]),
     // new BundleAnalyzerPlugin()

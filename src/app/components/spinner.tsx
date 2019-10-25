@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { keyframes } from 'app/styled';
 
 
-const Spinner = (props: {size: number}) =>
+const Spinner = (props?: { size: number }) =>
   <CssSpinner
     size={12}
     {...props} />
@@ -20,7 +20,7 @@ const rotate360 = keyframes`
   }
 `;
 
-const CssSpinner = styled.div<{size: number}>`
+const CssSpinner = styled.div<{ size: number }>`
   animation: ${rotate360} 1s linear infinite;
   transform: translateZ(0);
   float:left;

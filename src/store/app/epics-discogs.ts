@@ -8,15 +8,16 @@ import { pipe } from "fp-ts/lib/pipeable";
 import { ThunkAC } from "Store";
 import { isReleaseExpanded } from "Store/selectors";
 import * as Discogs from 'typescript-discogs-client';
-import { ArtistReleaseOrMaster, Master, Release } from "typescript-discogs-client";
+import { Master, Release } from "typescript-discogs-client";
 import {
-addDiscogsReleaseTracks, removeDiscogsReleaseTracks, setDiscogsGenres,
+  addDiscogsReleaseTracks, removeDiscogsReleaseTracks, setDiscogsGenres,
   // setDiscogsArtist,
   setDiscogsReleases, setDiscogsSearchResults, setError, setLoadingDiscogs
 } from "./actions";
 
 
-export const toggleDiscogsReleaseTracks = (release: Discogs.ArtistReleaseOrMaster): ThunkAC<Promise<void>> =>
+export const toggleDiscogsReleaseTracks = (release: Discogs.ArtistRelease | Discogs.ArtistMaster):
+  ThunkAC<Promise<void>> =>
   async (dispatch, getState) => {
     const { map, fold } = E
 
@@ -106,7 +107,7 @@ export const loadDiscogsGenres = (): ThunkAC<Promise<void>> => async (dispatch, 
 
   dispatch(setLoadingDiscogs(true))
 
-  const lastMain: Option<ArtistReleaseOrMaster> = pipe(
+  const lastMain: Option<Discogs.ArtistRelease | Discogs.ArtistMaster> = pipe(
     discogsReleases.filter(_ => _.role == 'Main'),
     last
   )

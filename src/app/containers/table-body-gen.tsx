@@ -8,10 +8,10 @@ import React from "react";
 import { useSelector } from "Store";
 // import * as DiscogsApi from '../../discogs/_types';
 import { TableRow } from "./table-row";
-import Discogs from 'typescript-discogs-client'
+import Discogs, { ArtistMaster, ArtistRelease } from 'typescript-discogs-client'
 
 const filterDiscogsReleasesRoles = (withoutRoles: string[]) =>
-  (rs: Discogs.ArtistReleaseOrMaster[]) =>
+  (rs: (ArtistRelease | ArtistMaster)[]) =>
     rs
       .filter(_ => withoutRoles.indexOf(_.role) == -1)
 

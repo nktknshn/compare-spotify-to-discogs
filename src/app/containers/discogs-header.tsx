@@ -24,7 +24,8 @@ left: -32px;
 
 const tupleO = sequenceT(option)
 
-const LoadingSpinner: React.FC<{ visible: boolean }> = ({ visible }) => visible ? <SmallSpinner /> : <></>
+const LoadingSpinner: React.FC<{ visible: boolean }> = ({ visible }) =>
+  <div style={{ marginTop: 'auto' }}>{visible ? <SmallSpinner /> : <></>}</div>
 
 export const DiscogsHeader: React.FunctionComponent = () => {
   const {
@@ -56,7 +57,9 @@ export const DiscogsHeader: React.FunctionComponent = () => {
 
             <Space />
 
-            <TextSecondary>{discogsGenres.slice(0, 5).join(", ")}</TextSecondary>
+            {discogsGenres.length > 0 &&
+              <TextSecondary style={{ marginTop: 'auto' }}>({discogsGenres.slice(0, 5).join(", ")})</TextSecondary>
+            }
 
             <AlignRight>
               <DiscogsArtistLink decoration="underline solid hsla(0, 100%, 100%, .33)" href="#"

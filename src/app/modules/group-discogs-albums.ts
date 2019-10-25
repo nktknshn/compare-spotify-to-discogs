@@ -3,12 +3,10 @@ import { pipe } from 'fp-ts/lib/pipeable'
 import { groupBy, NonEmptyArray, sort } from "fp-ts/lib/NonEmptyArray";
 import { ord, ordString, ordNumber } from "fp-ts/lib/Ord";
 import { flatten, map } from "fp-ts/lib/Array";
-import { ArtistReleaseOrMaster } from 'typescript-discogs-client';
-import { MasterTrack } from 'typescript-discogs-client/dist/types/master';
-import { ReleaseTrack } from 'typescript-discogs-client/dist/types/release';
+import { ArtistRelease, ArtistMaster } from 'typescript-discogs-client';
 import { DiscogsTracks } from 'Store/app/types';
 
-type Album = ArtistReleaseOrMaster
+type Album = ArtistRelease | ArtistMaster
 export const ordReleaseName = ord.contramap(ordString, (a: Album) => a.title)
 export const ordId = ord.contramap(ordNumber, (a: Album) => a.id)
 
