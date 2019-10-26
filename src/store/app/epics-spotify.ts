@@ -18,7 +18,7 @@ const getErrorAction = (error: SpotifyError): ThunkAC<void> => (dispatch) => {
   return error.statusCode == 401
     ? dispatch(setAccessTokenEpic(none))
     : dispatch(setError(some({
-      name: "SpotifyError",
+      name: "Spotify error",
       message: error.message,
       code: error.statusCode
     })))
@@ -121,9 +121,21 @@ export const loadSearchInputSpotifyArtistId = (artistId: string): ThunkAC<Promis
       spotify.getArtist(artistId), toSpotifyError),
     map(res => res.body),
     fold(
-      (err) => async () => { dispatch(getErrorAction(err)); return false },
+      (err) => async () => {
+        if (err.statusCode === 400) {
+          dispatch(setError(some({
+            code: 400,
+            message: `Artist with id '${artistId}' was not found`,
+            name: "Spotify error"
+          })))
+        } else {
+          dispatch(getErrorAction(err))
+        }
+        return false
+      },
       (artist) => async () => {
-        dispatch(setSpotifyArtists([artist])); return true
+        dispatch(setSpotifyArtists([artist]));
+        return true
       }
     )
   )()

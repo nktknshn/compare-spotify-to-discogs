@@ -13,7 +13,7 @@ const Container = styled.div`
 justify-content: center;
 align-items: center;
 display: flex;
-height: 50vh;
+height: calc(40vh - 128px);
 `
 
 export const SearchPage: React.FunctionComponent = () => {

@@ -19,6 +19,8 @@ interface StyledTheme {
   tableHeaderColor2: string,
   overlayBackgroundColor: string,
   searchInputBackground: string,
+  searchInputFontSizeMain: string,
+  searchInputFontSizeFloating: string,
 }
 
 const mainTheme: StyledTheme = {
@@ -32,7 +34,9 @@ const mainTheme: StyledTheme = {
   searchInputBackground: "hsl(0, 0%, 11%)",
   overlayBackgroundColor: "hsla(0, 0%, 20%, 0.9)",
   // tableHeaderColor2: "hsl(0, 0%, 8%)",
-  yearWidth: 20
+  yearWidth: 20,
+  searchInputFontSizeMain: "24px",
+  searchInputFontSizeFloating: "22px",
 }
 
 

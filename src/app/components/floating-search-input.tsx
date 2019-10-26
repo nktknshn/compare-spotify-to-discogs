@@ -13,7 +13,7 @@ margin: 128px auto;
 `
 
 const SmallerSearchInput = styled(SearchInput)`
-font-size: 22px;
+font-size: ${props => props.theme.searchInputFontSizeFloating};
 `
 
 export const FloatingSearchInput: React.FC<{ onClose: () => void }> = ({ onClose }) => {

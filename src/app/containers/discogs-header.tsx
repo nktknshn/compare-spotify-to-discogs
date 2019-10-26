@@ -52,10 +52,10 @@ export const DiscogsHeader: React.FunctionComponent = () => {
             <DiscogsArtistLink href={"https://discogs.com/artist/" + result.id}>
               {result.title}
             </DiscogsArtistLink>
+            
+            <Space />
 
             <LoadingSpinner visible={isLoadingDiscogs} />
-
-            <Space />
 
             {discogsGenres.length > 0 &&
               <TextSecondary style={{ marginTop: 'auto' }}>({discogsGenres.slice(0, 5).join(", ")})</TextSecondary>

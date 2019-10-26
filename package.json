@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "run-dev": "webpack-dev-server --env.DEV_MODE --host 0.0.0.0"
   },
   "author": "",
   "license": "ISC",
@@ -33,17 +34,18 @@
     "@types/node": "^12.7.5",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
+    "@types/react-icons": "^3.0.0",
     "@types/react-redux": "^7.1.2",
     "@types/redux-logger": "^3.0.7",
     "@types/redux-thunk": "^2.1.0",
     "@types/reselect": "^2.2.0",
     "@types/spotify-web-api-node": "^4.0.1",
     "@types/styled-components": "^4.1.19",
-    "@types/react-icons": "^3.0.0",
     "awesome-typescript-loader": "^5.2.1",
     "copy-webpack-plugin": "^5.0.4",
     "prettier": "^1.18.2",
     "typescript": "^3.6.3",
+    "webpack": "^4.41.2",
     "webpack-bundle-analyzer": "^3.5.0"
   }
 }

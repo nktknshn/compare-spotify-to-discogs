@@ -17,7 +17,7 @@ import {
 import { AppError } from "./types";
 
 const toAppError = (error: DiscogsError): AppError => ({
-  name: "DiscogsError",
+  name: "Discogs error",
   message: error.message,
   code: error.code || -1
 })
