@@ -1,5 +1,5 @@
 import { DirectionRow } from 'Components/styled-common'
-import { fold, some } from 'fp-ts/lib/Option'
+import { fold, some, none } from 'fp-ts/lib/Option'
 import { pipe } from 'fp-ts/lib/pipeable'
 import { parseSpotifyUrl } from 'Modules/parse-spotify-url'
 import React, { useState } from 'react'
@@ -47,7 +47,7 @@ export const SearchInput: React.FC<{ className?: string }> = ({ className }) => 
     fold(
       () => {
         dispatch(setError(some({
-          code: -1,
+          code: none,
           name: "Invalid input",
           message: "Must be a link or a Spotify URI"
         })))

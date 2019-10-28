@@ -3,6 +3,7 @@ import { useOutsideClick } from 'app/hooks/use-outside-click'
 import { Overlay, TextMain, Centered, DirectionColumns, TextSecondary } from './styled-common'
 import styled from 'Styles'
 import { AppError } from 'Store/app/types'
+import { isSome } from 'fp-ts/lib/Option'
 
 const Window = styled.div`
 background-color: ${props => props.theme.searchInputBackground};
@@ -25,7 +26,7 @@ export const FloatingError: React.FC<{ onClose: () => void, error: AppError }> =
       <Window ref={ref}>
         <TextMain>
           {/* <p>Error</p> */}
-          {error.code > -1 && <p><TextSecondary>{error.code}</TextSecondary></p>}
+          {isSome(error.code) && <p><TextSecondary>{error.code.value}</TextSecondary></p>}
           <p>{error.name}</p>
           <p>{error.message}</p>
         </TextMain>

@@ -3,7 +3,7 @@ import { discogs } from "discogs";
 import { last } from "fp-ts/lib/Array";
 // import { MasterReleaseResponse, ReleaseResponse, ReleasesEntity } from "discogs/_types";
 import * as E from "fp-ts/lib/Either";
-import { isSome, Option, some } from "fp-ts/lib/Option";
+import { isSome, Option, some, fromNullable } from "fp-ts/lib/Option";
 import { pipe } from "fp-ts/lib/pipeable";
 import { ThunkAC } from "Store";
 import { isReleaseExpanded } from "Store/selectors";
@@ -19,7 +19,7 @@ import { AppError } from "./types";
 const toAppError = (error: DiscogsError): AppError => ({
   name: "Discogs error",
   message: error.message,
-  code: error.code || -1
+  code: fromNullable(error.code)
 })
 
 export const toggleDiscogsReleaseTracks = (release: Discogs.ArtistRelease | Discogs.ArtistMaster):

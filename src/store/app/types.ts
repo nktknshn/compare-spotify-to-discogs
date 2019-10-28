@@ -6,7 +6,7 @@ import { Master, Release, MasterTrack, ReleaseTrack } from "typescript-discogs-c
 export type AppError = {
   name: string,
   message: string,
-  code: number
+  code: Option<number>
 }
 
 export type Track = MasterTrack | ReleaseTrack

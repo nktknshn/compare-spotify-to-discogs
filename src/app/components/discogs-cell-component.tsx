@@ -21,6 +21,7 @@ export const DiscogsTrackComponent: React.FC<{ track: Track }> =
     <TextSecondary>
       {track.position}
       <Space />
+      {'artists' in track && track['artists'] && <> <span> - </span>{artistsToLinks(track['artists'])}</>}
       {track.extraartists && <> <span> - </span>{artistsToLinks(track.extraartists)}</>}
       <Space />
       - {track.title}

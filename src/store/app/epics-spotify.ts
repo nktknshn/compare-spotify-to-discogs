@@ -20,7 +20,7 @@ const getErrorAction = (error: SpotifyError): ThunkAC<void> => (dispatch) => {
     : dispatch(setError(some({
       name: "Spotify error",
       message: error.message,
-      code: error.statusCode
+      code: some(error.statusCode)
     })))
 }
 
@@ -124,7 +124,7 @@ export const loadSearchInputSpotifyArtistId = (artistId: string): ThunkAC<Promis
       (err) => async () => {
         if (err.statusCode === 400) {
           dispatch(setError(some({
-            code: 400,
+            code: some(400),
             message: `Artist with id '${artistId}' was not found`,
             name: "Spotify error"
           })))
